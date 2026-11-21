@@ -34,7 +34,7 @@ const lb = document.getElementById('lightbox');
 const lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.lb-cap');
 document.querySelectorAll('.g-item').forEach(it => it.addEventListener('click', () => {
   const img = it.querySelector('img');
-  lbImg.src = img.src; lbImg.alt = img.alt;
+  lbImg.src = img.src; lbImg.alt = it.querySelector('figcaption').textContent;
   lbCap.textContent = it.querySelector('figcaption').textContent;
   lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
 }));
@@ -48,11 +48,11 @@ form.addEventListener('submit', e => {
   e.preventDefault();
   const note = form.querySelector('.form-note');
   if (!form.imie.value.trim() || !form.email.checkValidity() || !form.email.value) {
-    note.textContent = 'Podaj proszę imię i poprawny adres e-mail.';
+    note.textContent = t('form.err');
     note.className = 'form-note err';
     return;
   }
-  note.textContent = 'Dziękujemy! To wersja demonstracyjna strony – formularz zostanie podłączony wkrótce.';
+  note.textContent = t('form.ok');
   note.className = 'form-note ok';
   form.reset();
 });

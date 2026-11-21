@@ -8,3 +8,6 @@ Statyczna strona (HTML/CSS/JS), hostowana na GitHub Pages.
 - **Kontakt**: adres pracowni, telefon i e-mail (oznaczone na żółto w sekcji „Kontakt”).
 - **Facebook**: dokładny adres strony (obecnie link do wyszukiwarki Facebooka).
 - **Formularz wyceny**: obecnie wersja demo (bez wysyłki). Można podłączyć np. Formspree lub mailto.
+
+## Wersja francuska (dla podglądu)
+Strona jest domyślnie po polsku. Dodanie `?lang=fr` na końcu adresu pokazuje tłumaczenie francuskie (bez widocznego przełącznika na stronie). Teksty francuskie: `i18n.js`.
