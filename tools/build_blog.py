@@ -10,7 +10,7 @@ from legal import LEGAL, UPDATED
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
 BASE = "https://pracowniacoccinelle.com/"
-V = "19"  # wersja CSS/JS (odświeżenie cache)
+V = "20"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -50,6 +50,8 @@ HEAD = """<!doctype html>
 <meta property="og:url" content="{url}">
 <link rel="canonical" href="{url}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
 {ogimg}<meta name="theme-color" content="#fbf9f6">
 <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
@@ -120,11 +122,19 @@ def card(a, prefix=""):
       <span class="post-more" data-i18n="blog.more">Czytaj dalej</span>
     </a>"""
 
+def OG(u, alt="Coccinelle – suknie ślubne szyte na miarę, pracownia w Hrubieszowie"):
+    """Pełny zestaw meta obrazka do podglądu linku (WhatsApp, Facebook, Pinterest, X)."""
+    u = html.escape(u, quote=True); alt = html.escape(alt, quote=True)
+    return (f'<meta property="og:image" content="{u}">\n<meta property="og:image:secure_url" content="{u}">\n'
+            f'<meta property="og:image:type" content="image/jpeg">\n<meta property="og:image:width" content="1200">\n'
+            f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{alt}">\n'
+            f'<meta name="twitter:image" content="{u}">\n<meta name="twitter:image:alt" content="{alt}">\n')
+
 def build_index():
     cards = "\n".join(card(a) for a in ARTICLES)
     page = HEAD.format(title="Porady dla Panny Młodej · Coccinelle Suknie Ślubne",
                        desc="Jak zorganizować ślub, wybrać suknię i niczego nie zapomnieć. Praktyczne porady dla Par Młodych od pracowni Coccinelle.",
-                       ogtype="website", url=BASE + "porady/", ogimg=f'<meta property="og:image" content="{img(ARTICLES[0]["img"], 1200, 630)}">\n', v=V, ld="")
+                       ogtype="website", url=BASE + "porady/", ogimg=OG(BASE + "images/og-card.jpg"), v=V, ld="")
     page += f"""<section class="blog-hero">
   <p class="eyebrow" data-i18n="blog.eyebrow">Porady</p>
   <h1 data-i18n="blog.title"><span class="script">Ślubny</span> niezbędnik</h1>
@@ -148,7 +158,7 @@ def build_article(i, a):
           "headline": p["title"], "image": img(a["img"], 1200), "inLanguage": "pl",
           "publisher": {"@type": "Organization", "name": "Coccinelle Suknie Ślubne"}}, ensure_ascii=False) + '</script>\n')
     page = HEAD.format(title=f"{p['title']} · Coccinelle", desc=html.escape(p["lead"]), ogtype="article", url=BASE + "porady/" + a["slug"] + ".html",
-                       ogimg=f'<meta property="og:image" content="{img(a["img"], 1200, 630)}">\n', v=V, ld=ld)
+                       ogimg=OG(img(a["img"], 1200, 630), p["title"]), v=V, ld=ld)
     def art(lang, d):
         hid = "" if lang == "pl" else " hidden"
         back = "Wszystkie porady" if lang == "pl" else "Tous les conseils"
@@ -196,7 +206,7 @@ def build_legal(doc):
     p = doc["pl"]
     page = HEAD.format(title=f"{p['title']} · Coccinelle", desc=html.escape(p["lead"]), ogtype="website",
                        url=BASE + "informacje/" + doc["slug"] + ".html",
-                       ogimg=f'<meta property="og:image" content="{BASE}images/og-image.jpg">\n', v=V, ld="")
+                       ogimg=OG(BASE + "images/og-card.jpg"), v=V, ld="")
     page = page.replace('href="index.html" data-i18n="nav.blog" class="current"', 'href="../porady/index.html" data-i18n="nav.blog"')
     page = page.replace('<body class="blog-page">', '<body class="blog-page legal-page">')
     for lang in ("pl", "fr"):
