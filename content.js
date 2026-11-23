@@ -25,7 +25,30 @@ const SITE = {
     email: '',              // np. 'kontakt@coccinelle.pl'
     instagram: 'coccinellesuknieslubne',
     facebook: 'https://www.facebook.com/pracowniacoccinelle/',
-    consultDuration: { pl: '', fr: '' } // np. { pl: 'ok. 1,5 godziny', fr: 'environ 1 h 30' }
+    consultDuration: { pl: '', fr: '' }, // np. { pl: 'ok. 1,5 godziny', fr: 'environ 1 h 30' }
+    // Godziny otwarcia (wg wizytówki Google) · Horaires (fiche Google). Puste = ukryte.
+    hours: [
+      { d: { pl: 'Pon. – pt.', fr: 'Lun. – ven.' }, h: '10:00 – 17:00' },
+      { d: { pl: 'Sobota', fr: 'Samedi' }, h: '10:00 – 12:00' },
+      { d: { pl: 'Niedziela', fr: 'Dimanche' }, h: { pl: 'nieczynne', fr: 'fermé' } }
+    ]
+  },
+
+  // Opinie z Google – przepisane dosłownie z wizytówki, nic nie jest dopisane.
+  // Avis Google recopiés mot pour mot depuis la fiche, rien n'est inventé.
+  // Pokazujemy tylko opinie z treścią; pozostałe liczą się do oceny. Puste items = sekcja ukryta.
+  reviews: {
+    rating: 4.8,
+    count: 6,
+    url: 'https://www.google.com/maps/place/Coccinelle+Suknie+%C5%9Alubne/@50.8049038,23.8902163,17z/data=!4m8!3m7!1s0x47248f257ac4a6cb:0x5569bdce8a6a7143!8m2!3d50.8049038!4d23.8902163!9m1!1b1!16s%2Fg%2F1tmptr7_',
+    items: [
+      { name: 'Myszka M.', stars: 5, when: { pl: '2 lata temu', fr: 'il y a 2 ans' },
+        text: 'Pani Jola zna się na swoim fachu jak mało kto. Doświadczenie, poczucie estetyki, kreatywność, fachowość oraz terminowość, wszystko w jednej osobie. Suknia ślubna, była tworzona 8 miesięcy, w Lublinie musiałabym zamówić z rocznym wyprzedzeniem. Pani Jola doradzała, przynosiła próbki, dopasowywała suknię, aby co do milimetra wyglądała pięknie. Poświęcała mi tyle czasu ile potrzebowałam. Mogłam liczyć na pomocne rady, troskę i poczucie, że suknia będzie nie tylko pięknie zrobiona, ale też uszyta na czas. Zależało mi, aby była inna niż te, które do tej pory widziałam. Dodatkowy plus jest taki, że można w całości „ubrać się” w salonie. Pani Jola ma wszelkie dodatki i asortyment ślubny, który potrzebny jest każdej Pannie Młodej.\nGoście byli zachwyceni, a ja szczęśliwa, że jest to moja wymarzona suknia ślubna.\nBARDZO DZIĘKUJĘ! Życzę kolejnych pięknych projektów!' },
+      { name: 'Hark U.', stars: 5, when: { pl: '6 lat temu', fr: 'il y a 6 ans' },
+        text: 'Fantastyczna suknia! Pani krawcowa jest mistrzynią w swoim fachu, stworzy suknię jaką tylko sobie wymarzysz.' },
+      { name: 'Adrian S.', stars: 5, when: { pl: '8 lat temu', fr: 'il y a 8 ans' },
+        text: 'Piękne suknie' }
+    ]
   },
 
   // Adres, na który formularz wysyła zapytania (np. Formspree: 'https://formspree.io/f/xxxx').
@@ -42,8 +65,8 @@ const SITE = {
   owner: { name: 'Coccinelle Suknie Ślubne', company: '', address: 'ul. 3 Maja 2, 22-500 Hrubieszów', nip: '', email: '' },
 
   // Statystyki: identyfikator Google Analytics 4 (np. 'G-XXXXXXX').
-  // Puste = brak statystyk i brak banera cookies. Statystyki ładują się dopiero po zgodzie.
-  // Statistiques : ID Google Analytics 4. Vide = pas de statistiques ni de bandeau cookies.
+  // Statystyki i mapa Google ładują się dopiero po zgodzie w banerze cookies.
+  // Statistiques et carte Google : chargées seulement après accord dans le bandeau.
   analytics: { ga4: '' }
 };
 

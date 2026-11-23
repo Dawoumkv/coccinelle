@@ -50,13 +50,64 @@
       if (c.email) lines.push(`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`);
       if (lines.length) { reach.querySelector('p').innerHTML = lines.join('<br>'); reach.hidden = false; }
     }
+    const hours = document.getElementById('ct-hours');
+    if (hours && (c.hours || []).length) {
+      hours.querySelector('dl').innerHTML = c.hours.map(x => `<div><dt>${esc(tr(x.d))}</dt><dd>${esc(tr(x.h))}</dd></div>`).join('');
+      hours.hidden = false;
+    }
+
+    // Mapa Google: dopiero po zgodzie na cookies albo po kliknięciu · Carte : après accord ou clic
     const map = document.getElementById('ct-map');
     if (map && c.map) {
       const q = encodeURIComponent(c.map);
-      map.innerHTML = `<iframe src="https://www.google.com/maps?q=${q}&amp;z=16&amp;hl=${L}&amp;output=embed" title="${esc(T('Mapa dojazdu do pracowni', 'Plan d’accès à l’atelier'))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <a class="btn btn-ghost map-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=${q}" target="_blank" rel="noopener">${T('Wyznacz trasę', 'Itinéraire')}</a>`;
+      const route = `<a class="btn btn-ghost map-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=${q}" target="_blank" rel="noopener">${T('Wyznacz trasę', 'Itinéraire')}</a>`;
+      const showMap = () => {
+        if (map.querySelector('iframe')) return;
+        map.classList.remove('is-off');
+        map.innerHTML = `<iframe src="https://www.google.com/maps?q=${q}&amp;z=16&amp;hl=${L}&amp;output=embed" title="${esc(T('Mapa dojazdu do pracowni', 'Plan d’accès à l’atelier'))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>${route}`;
+      };
+      let ok = null; try { ok = localStorage.getItem('coccinelle-cookies'); } catch (e) {}
+      if (ok === 'yes') showMap();
+      else {
+        map.classList.add('is-off');
+        map.innerHTML = `<div class="map-off">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+          <p class="map-addr">${esc(c.address || '')}</p>
+          <p class="muted">${T('Mapa Google zapisuje własne pliki cookies, dlatego wyświetlamy ją dopiero na Twoje życzenie.', 'Google Maps dépose ses propres cookies : la carte ne s’affiche qu’à votre demande.')}</p>
+          <div class="map-actions"><button type="button" class="btn btn-dark" data-map-show>${T('Pokaż mapę', 'Afficher la carte')}</button>${route}</div>
+        </div>`;
+        map.querySelector('[data-map-show]').addEventListener('click', showMap);
+      }
+      window.addEventListener('cocci-consent', e => { if (e.detail === 'yes') showMap(); });
       map.hidden = false;
     }
+
+    // Opinie Google: dosłownie z content.js · Avis Google tels quels
+    const rv = SITE.reviews, rs = document.getElementById('opinie');
+    if (rs && rv && (rv.items || []).length) {
+      const star = n => `<span class="stars" role="img" aria-label="${esc(T(`Ocena ${n} na 5`, `Note ${n} sur 5`))}">${'★'.repeat(Math.round(n))}${'☆'.repeat(5 - Math.round(n))}</span>`;
+      const num = String(rv.rating).replace('.', ',');
+      rs.querySelector('.rev-score').innerHTML = `${star(rv.rating)} <strong>${esc(num)}</strong> / 5 · ${esc(T(`${rv.count} opinii w Google`, `${rv.count} avis sur Google`))}`;
+      rs.querySelector('.rev-grid').innerHTML = rv.items.map(r => {
+        const long = r.text.length > 320;
+        return `<figure class="rev-card reveal${long ? ' is-long' : ''}">
+          ${star(r.stars)}
+          <blockquote lang="pl">${esc(r.text).replace(/\n/g, '<br>')}</blockquote>
+          ${long ? `<button type="button" class="link-btn rev-toggle" aria-expanded="false">${T('Czytaj całość', 'Lire la suite')}</button>` : ''}
+          <figcaption><strong>${esc(r.name)}</strong><span>Google · ${esc(tr(r.when))}</span></figcaption>
+        </figure>`;
+      }).join('');
+      rs.querySelectorAll('.rev-toggle').forEach(b => b.addEventListener('click', () => {
+        const open = b.closest('.rev-card').classList.toggle('open');
+        b.setAttribute('aria-expanded', open);
+        b.textContent = open ? T('Zwiń', 'Réduire') : T('Czytaj całość', 'Lire la suite');
+      }));
+      const more = rs.querySelector('.rev-more a');
+      if (rv.url) more.href = rv.url; else more.parentElement.hidden = true;
+      if (L === 'fr') rs.querySelector('.section-head').insertAdjacentHTML('beforeend', '<p class="muted">Avis publiés en polonais sur Google, reproduits tels quels.</p>');
+      rs.hidden = false;
+    }
+
     const fb = document.getElementById('ct-fb');
     if (fb && c.facebook) { fb.href = c.facebook; fb.parentElement.hidden = false; }
     const dur = document.getElementById('cons-time');

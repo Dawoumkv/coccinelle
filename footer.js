@@ -1,5 +1,5 @@
 // Stopka, zgoda na cookies i statystyki · Pied de page, consentement cookies et statistiques
-// Ustawienia w content.js: SITE.madeBy i SITE.analytics.ga4
+// Ustawienia w content.js: SITE.madeBy, SITE.contact.map i SITE.analytics.ga4
 (function () {
   if (typeof SITE === 'undefined') return;
   const L = typeof LANG !== 'undefined' ? LANG : 'pl';
@@ -23,9 +23,12 @@
   if (c.instagram) ownerLines.push(`Instagram: <a href="https://www.instagram.com/${esc(c.instagram)}/" target="_blank" rel="noopener">@${esc(c.instagram)}</a>`);
   document.querySelectorAll('[data-owner]').forEach(el => { el.innerHTML = ownerLines.join('<br>'); });
 
-  // ---------- Cookies i statystyki (tylko gdy ustawiono GA4) ----------
+  // ---------- Zgoda na cookies: mapa Google i (opcjonalnie) statystyki ----------
+  // Consentement : carte Google et, si un ID est renseigné, statistiques GA4
   const id = ((SITE.analytics || {}).ga4 || '').trim();
-  if (!/^G-[A-Z0-9]+$/.test(id)) return;            // brak ID = brak banera i brak śledzenia
+  const hasGA = /^G-[A-Z0-9]+$/.test(id);
+  const hasMap = !!(c.map);
+  if (!hasGA && !hasMap) return;                   // nic zewnętrznego = brak banera
   const KEY = 'coccinelle-cookies';
   const get = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
   const set = v => { try { localStorage.setItem(KEY, v); } catch (e) {} };
@@ -49,7 +52,10 @@
   bar.setAttribute('role', 'region');
   bar.setAttribute('aria-label', T('Zgoda na cookies', 'Consentement aux cookies'));
   bar.hidden = true;
-  bar.innerHTML = `<p>${T('Używamy plików cookies do anonimowych statystyk odwiedzin, tylko jeśli się zgodzisz.', 'Nous utilisons des cookies pour des statistiques de visite anonymes, uniquement avec votre accord.')}
+  const what = hasGA && hasMap
+    ? T('mapy Google i anonimowych statystyk odwiedzin', 'la carte Google et des statistiques de visite anonymes')
+    : hasGA ? T('anonimowych statystyk odwiedzin', 'des statistiques de visite anonymes') : T('mapy Google z dojazdem do pracowni', 'la carte Google de l’accès à l’atelier');
+  bar.innerHTML = `<p><strong>${T('Pliki cookies', 'Cookies')}</strong> · ${T('Strona działa bez nich. Za Twoją zgodą użyjemy usług zewnętrznych:', 'Le site fonctionne sans eux. Avec votre accord, nous utilisons des services externes :')} ${what}. ${T('Zgodę możesz zmienić w każdej chwili w stopce.', 'Vous pouvez changer d’avis à tout moment en bas de page.')}
     <a href="${policy}">${T('Więcej informacji', 'En savoir plus')}</a></p>
     <div class="cookie-actions">
       <button type="button" class="btn btn-ghost" data-c="no">${T('Odrzuć', 'Refuser')}</button>
@@ -60,15 +66,16 @@
   const open = () => { bar.hidden = false; };
   bar.addEventListener('click', e => {
     const b = e.target.closest('[data-c]'); if (!b) return;
-    const yes = b.dataset.c === 'yes';
+    const yes = b.dataset.c === 'yes', prev = get();
     set(yes ? 'yes' : 'no');
     bar.hidden = true;
-    if (yes) loadGA();
-    else if (loaded) location.reload();             // wycofanie zgody · retrait du consentement
+    window.dispatchEvent(new CustomEvent('cocci-consent', { detail: yes ? 'yes' : 'no' }));
+    if (yes) { if (hasGA) loadGA(); }
+    else if (prev === 'yes') location.reload();      // wycofanie zgody · retrait du consentement
   });
   document.querySelectorAll('.cookie-open').forEach(b => { b.hidden = false; b.addEventListener('click', open); });
 
   const choice = get();
-  if (choice === 'yes') loadGA();
+  if (choice === 'yes') { if (hasGA) loadGA(); }
   else if (choice !== 'no') open();
 })();
