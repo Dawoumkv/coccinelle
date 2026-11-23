@@ -4,86 +4,87 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Coccinelle Suknie Ślubne · Suknie ślubne szyte na miarę</title>
-<meta name="description" content="Coccinelle – autorska pracownia krawiecka z województwa lubelskiego. Suknie ślubne szyte na miarę: pokaż nam, o czym marzysz, a my to dla Ciebie uszyjemy.">
+<meta name="description" content="Coccinelle – autorska pracownia krawiecka z Lubelszczyzny. Suknie ślubne szyte na miarę: pokaż nam, o czym marzysz, a my to dla Ciebie uszyjemy.">
 <meta property="og:title" content="Coccinelle Suknie Ślubne">
-<meta property="og:description" content="Suknie ślubne szyte na miarę. Profesjonalna Autorska Pracownia Krawiecka, woj. lubelskie.">
+<meta property="og:description" content="Suknie ślubne szyte na miarę. Autorska pracownia krawiecka, województwo lubelskie.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta name="theme-color" content="#fbf9f6">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="stylesheet" href="style.css?v=6">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=7">
+<script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ClothingStore","name":"Coccinelle Suknie Ślubne","description":"Suknie ślubne szyte na miarę. Profesjonalna Autorska Pracownia Krawiecka.","areaServed":"województwo lubelskie","sameAs":["https://www.instagram.com/coccinellesuknieslubne/"]}
+{"@context":"https://schema.org","@type":"ClothingStore","name":"Coccinelle Suknie Ślubne","description":"Suknie ślubne szyte na miarę. Autorska pracownia krawiecka.","areaServed":"województwo lubelskie","sameAs":["https://www.instagram.com/coccinellesuknieslubne/"]}
 </script>
 </head>
 <body class="has-hero">
+<a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
 
 <header class="nav" id="top">
   <div class="nav-left">
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
-    <nav class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links" aria-label="Menu">
       <a href="#o-nas" data-i18n="nav.about">O nas</a>
       <a href="#suknie" data-i18n="nav.dresses">Inspiracje</a>
       <a href="#kreator" data-i18n="nav.creator">Twoja suknia</a>
       <a href="porady/index.html" data-i18n="nav.blog">Porady</a>
       <a href="#pytania" data-i18n="nav.faq">Pytania</a>
       <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
-      <a href="#wycena" class="nav-mobile-only" data-i18n="nav.quote">Wycena</a>
+      <a href="#wycena" class="nav-mobile-only" data-i18n="nav.quote">Napisz do nas</a>
     </nav>
   </div>
-  <a href="#top" class="brand" aria-label="Coccinelle">
+  <a href="#top" class="brand" aria-label="Coccinelle Suknie Ślubne">
     <span class="brand-text">Coccinelle<small>Suknie Ślubne</small></span>
   </a>
   <div class="nav-right">
-    <a href="#wycena" class="nav-cta" data-i18n="nav.quote">Wycena</a>
+    <a href="#wycena" class="nav-cta" data-i18n="nav.quote">Napisz do nas</a>
   </div>
 </header>
 
-<main>
+<main id="main">
 
 <!-- HERO -->
 <section class="hero hero-full">
   <picture class="hero-bg">
-    <source media="(max-width:700px)" srcset="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=900&h=1500">
-    <img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?auto=format&fit=crop&q=80&w=2200&h=1300" alt="Para Młoda na spacerze w górach" data-i18n-alt="hero.alt" fetchpriority="high">
+    <source media="(max-width:700px)" data-img="hero" data-w="900" data-h="1500">
+    <img data-img="hero" data-w="2200" data-h="1300" alt="" fetchpriority="high" width="2200" height="1300">
   </picture>
   <div class="hero-text">
-    <p class="eyebrow" data-i18n="hero.eyebrow">Autorska pracownia krawiecka · woj. lubelskie</p>
+    <p class="eyebrow" data-i18n="hero.eyebrow">Autorska pracownia krawiecka · Lubelskie</p>
     <h1 data-i18n="hero.title"><span class="script">Suknie ślubne</span> szyte na miarę</h1>
     <p class="lead" data-i18n="hero.lead">Pokaż nam, o czym marzysz, a my to dla Ciebie uszyjemy.</p>
     <div class="hero-actions">
-      <a href="#wycena" class="btn btn-light" data-i18n="hero.cta1">Zapytaj o wycenę</a>
-      <a href="#kreator" class="btn btn-outline-light" data-i18n="hero.cta2">Wymarz swoją suknię</a>
+      <a href="#kreator" class="btn btn-light" data-i18n="hero.cta2">Wymarz swoją suknię</a>
+      <a href="#wycena" class="btn btn-outline-light" data-i18n="hero.cta1">Zapytaj o suknię</a>
     </div>
   </div>
-  <a href="#o-nas" class="scroll-hint" aria-label="Scroll"><span></span></a>
 </section>
 
 <!-- PASEK -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track" data-i18n="marquee">
-    <span>Szyte na miarę</span><i>✦</i><span>Autorskie projekty</span><i>✦</i><span>Koronki &amp; tiule</span><i>✦</i><span>Ręczne wykończenia</span><i>✦</i><span>Przymiarki aż do perfekcji</span><i>✦</i>
-    <span>Szyte na miarę</span><i>✦</i><span>Autorskie projekty</span><i>✦</i><span>Koronki &amp; tiule</span><i>✦</i><span>Ręczne wykończenia</span><i>✦</i><span>Przymiarki aż do perfekcji</span><i>✦</i>
+    <span>Szyte na miarę</span><i>✦</i><span>Autorskie projekty</span><i>✦</i><span>Koronki i tiule</span><i>✦</i><span>Ręczne wykończenia</span><i>✦</i><span>Przymiarki aż do perfekcji</span><i>✦</i>
+    <span>Szyte na miarę</span><i>✦</i><span>Autorskie projekty</span><i>✦</i><span>Koronki i tiule</span><i>✦</i><span>Ręczne wykończenia</span><i>✦</i><span>Przymiarki aż do perfekcji</span><i>✦</i>
   </div>
 </div>
 
 <!-- O NAS -->
 <section class="about" id="o-nas">
   <div class="about-img reveal">
-    <img src="https://images.unsplash.com/photo-1524563970700-a302b6888e17?auto=format&fit=crop&w=900&q=80&h=1125" alt="Koronkowa suknia ślubna z guziczkami na plecach" data-i18n-alt="about.alt" loading="lazy">
+    <img data-img="about" data-w="900" data-h="1125" data-widths="500,900,1300" data-sizes="(max-width:860px) 90vw, 42vw" alt="" loading="lazy" width="900" height="1125">
   </div>
   <div class="about-text reveal">
     <p class="eyebrow" data-i18n="about.eyebrow">O nas</p>
     <h2 data-i18n="about.title">Pracownia, w której <em>Twoja wizja</em> nabiera kształtu</h2>
-    <p data-i18n="about.p1">Coccinelle to profesjonalna, autorska pracownia krawiecka. Nie sprzedajemy sukni z wieszaka – każdą projektujemy i szyjemy od podstaw, na wymiar konkretnej Panny Młodej.</p>
-    <p data-i18n="about.p2">Słuchamy, doradzamy w wyborze tkanin i fasonu, a potem krok po kroku, przymiarka po przymiarce, dopracowujemy każdy detal: koronkę, dekolt, długość trenu. Tak, by w dniu ślubu suknia leżała idealnie i była dokładnie taka, jak w Twoich marzeniach.</p>
+    <p data-i18n="about.p1">Coccinelle to autorska pracownia krawiecka. Nie sprzedajemy sukni z wieszaka: każdą projektujemy i szyjemy od podstaw, na miarę konkretnej Panny Młodej.</p>
+    <p data-i18n="about.p2">Słuchamy, doradzamy przy wyborze tkanin i fasonu, a potem – przymiarka po przymiarce – dopracowujemy każdy detal: koronkę, dekolt, długość trenu. Tak, żeby w dniu ślubu suknia leżała idealnie i była dokładnie taka, jaką sobie wymarzyłaś.</p>
     <ul class="values">
       <li><strong data-i18n="about.v1t">Na miarę</strong><span data-i18n="about.v1">Krój dopasowany do Twojej sylwetki</span></li>
-      <li><strong data-i18n="about.v2t">Autorski projekt</strong><span data-i18n="about.v2">Suknia, której nie ma nikt inny</span></li>
+      <li><strong data-i18n="about.v2t">Autorski projekt</strong><span data-i18n="about.v2">Suknia, jakiej nie ma nikt inny</span></li>
       <li><strong data-i18n="about.v3t">Ręczna praca</strong><span data-i18n="about.v3">Precyzja i dbałość o detal</span></li>
     </ul>
   </div>
@@ -99,58 +100,48 @@
     <article class="reveal">
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40 L24 8 L40 40" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M14 28 H34" stroke="currentColor" stroke-width="1.2"/></svg>
       <h3 data-i18n="why.1t">Idealne dopasowanie</h3>
-      <p data-i18n="why.1">Suknia jest konstruowana od zera według Twoich wymiarów. Nie trzeba jej „przerabiać” – od początku powstaje dla Twojej sylwetki.</p>
+      <p data-i18n="why.1">Suknię konstruujemy od zera według Twoich wymiarów. Nie trzeba jej przerabiać – od początku powstaje dla Twojej sylwetki.</p>
     </article>
     <article class="reveal">
       <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M24 9 V39 M9 24 H39" stroke="currentColor" stroke-width="1.2" opacity=".5"/></svg>
       <h3 data-i18n="why.2t">Twoje pomysły</h3>
-      <p data-i18n="why.2">Możesz połączyć ulubiony dekolt z wymarzonym dołem, wybrać koronkę, rękawy i tren. Projekt powstaje razem z Tobą.</p>
+      <p data-i18n="why.2">Ulubiony dekolt, wymarzony dół, koronka, rękawy, tren – możesz połączyć wszystko, co kochasz. Projekt powstaje razem z Tobą.</p>
     </article>
     <article class="reveal">
       <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40 C10 30 6 22 6 16 A9 9 0 0 1 24 12 A9 9 0 0 1 42 16 C42 22 38 30 24 40 Z" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
       <h3 data-i18n="why.3t">Niepowtarzalność</h3>
-      <p data-i18n="why.3">Nikt inny nie będzie miał takiej samej sukni. To projekt autorski, uszyty tylko dla Ciebie, na ten jeden wyjątkowy dzień.</p>
+      <p data-i18n="why.3">Nikt inny nie będzie miał takiej samej sukni. To autorski projekt, uszyty tylko dla Ciebie, na ten jeden wyjątkowy dzień.</p>
     </article>
   </div>
 </section>
 
-<!-- GALERIA -->
+<!-- GALERIA INSPIRACJI -->
 <section class="gallery-section" id="suknie">
   <div class="section-head reveal">
     <p class="eyebrow" data-i18n="gal.eyebrow">Inspiracje</p>
-    <h2 data-i18n="gal.title">Fasony, które kochamy</h2>
-    <p data-i18n="gal.lead">Inspiracje i fasony, które możemy uszyć specjalnie dla Ciebie. Każda suknia jest najpierw czyimś marzeniem.</p>
+    <h2 data-i18n="gal.title">Fasony, które <em>kochamy</em></h2>
+    <p data-i18n="gal.lead">Sylwetki i detale, od których można zacząć rozmowę o Twojej sukni. Otwórz zdjęcie, aby zobaczyć opis, a serduszkiem zapisz to, co Ci się podoba.</p>
   </div>
-  <div class="filters reveal">
-    <button class="active" data-filter="all" data-i18n="gal.f0">Wszystkie</button>
-    <button data-filter="klasyczne" data-i18n="gal.f1">Klasyczne</button>
-    <button data-filter="syrenka" data-i18n="gal.f2">Syrenka</button>
-    <button data-filter="minimalistyczne" data-i18n="gal.f3">Minimalistyczne</button>
-    <button data-filter="kombinezon" data-i18n="gal.f4">Kombinezon</button>
+  <div class="filters reveal" role="group" aria-label="Filtruj inspiracje" data-i18n-aria="gal.filter">
+    <button type="button" aria-pressed="true" data-filter="all" data-i18n="gal.f0">Wszystkie</button>
+    <button type="button" aria-pressed="false" data-filter="ksiezniczka" data-i18n="gal.f1">Księżniczki</button>
+    <button type="button" aria-pressed="false" data-filter="syrenka" data-i18n="gal.f2">Syrenki</button>
+    <button type="button" aria-pressed="false" data-filter="minimal" data-i18n="gal.f3">Minimalistyczne</button>
+    <button type="button" aria-pressed="false" data-filter="kombinezon" data-i18n="gal.f4">Kombinezony</button>
   </div>
-  <p class="gallery-hint reveal" data-i18n="gal.hint">Kliknij ♡ przy sukni, która Ci się podoba – stworzysz swoją selekcję i dołączysz ją do zapytania.</p>
-  <div class="gallery">
-    <!-- Zdjęcia poglądowe z Unsplash: podmień na prawdziwe zdjęcia sukni z pracowni (np. images/suknia-1.jpg) -->
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1549488497-94b52bddac5d?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c1">Koronka &amp; dekolt w serduszko</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="syrenka"><img src="https://images.unsplash.com/photo-1585241920473-b472eb9ffbae?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c2">Syrenka z dekoltem V</figcaption></figure>
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1548313093-370cf4ba3892?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c3">Księżniczka</figcaption></figure>
-    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="https://images.unsplash.com/photo-1622277430358-f4d134452e2e?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c4">Prosty krój, kwadratowy dekolt</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1549417229-7686ac5595fd?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c5">Litera A z koronką</figcaption></figure>
-    <figure class="g-item reveal" data-cat="kombinezon"><img src="https://images.unsplash.com/photo-1769230385611-7d1d1c6b3684?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c6">Kombinezon ślubny</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="syrenka"><img src="https://images.unsplash.com/photo-1529636273736-fc88b31ea9d9?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c7">Koronkowa syrenka</figcaption></figure>
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c8">Rozkloszowana, dekolt V</figcaption></figure>
-    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="https://images.unsplash.com/photo-1492175742197-ed20dc5a6bed?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c9">Dopasowana, delikatna koronka</figcaption></figure>
-  </div>
+  <p class="sr-only" id="gallery-status" role="status" aria-live="polite"></p>
+  <div class="gallery" id="gallery"></div>
+  <p class="provisional-note" data-provisional data-i18n="gal.prov">Zdjęcia poglądowe – nie są to realizacje pracowni.</p>
 
-  <div class="realizacje reveal">
-    <div class="realizacje-text">
+  <!-- Realizacje pracowni: sekcja pojawi się, gdy w content.js będą prawdziwe zdjęcia -->
+  <div class="realizacje" id="realizacje" hidden>
+    <div class="section-head">
       <p class="eyebrow" data-i18n="real.eyebrow">Nasze realizacje</p>
-      <h3 data-i18n="real.title">Historie naszych Panien Młodych</h3>
-      <p data-i18n="real.lead">Od pierwszego szkicu, przez wybór tkanin i przymiarki, aż po dzień ślubu. Wkrótce pokażemy tu prawdziwe suknie uszyte w naszej pracowni.</p>
-      <p><span class="todo" data-i18n="real.todo">[Tu pojawią się historie i zdjęcia sukni z pracowni – do uzupełnienia]</span></p>
+      <h3 data-i18n="real.title">Suknie uszyte w naszej pracowni</h3>
     </div>
+    <div class="real-grid"></div>
   </div>
-  <p class="gallery-more reveal" data-i18n="gal.more">Więcej realizacji na <a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener">Instagramie @coccinellesuknieslubne</a></p>
+  <p class="gallery-more reveal" data-i18n="gal.more">Suknie uszyte w pracowni zobaczysz na <a href="https://www.instagram.com/coccinellesuknieslubne/" data-ig target="_blank" rel="noopener">Instagramie @coccinellesuknieslubne</a></p>
 </section>
 
 <!-- KREATOR -->
@@ -158,23 +149,25 @@
   <div class="section-head reveal">
     <p class="eyebrow" data-i18n="kr.eyebrow">Wymarz swoją suknię</p>
     <h2 data-i18n="kr.title">Zaprojektujmy <em>Twoją suknię</em></h2>
-    <p data-i18n="kr.lead">Sześć krótkich pytań: styl, sylwetka, dekolt, rękawy, tkaniny i data ślubu. Na końcu dostaniesz własną tablicę inspiracji i kalendarz sukni, które możesz zapisać lub wysłać do pracowni.</p>
+    <p data-i18n="kr.lead">Sześć krótkich pytań: nastrój, sylwetka, dekolt, rękawy, tkaniny i data ślubu. Na końcu zobaczysz szkic swojej sukni i orientacyjny kalendarz. Możesz je zapisać albo dołączyć do wiadomości dla pracowni.</p>
   </div>
-  <div class="kreator-app reveal" id="kreator-app"></div>
+  <div class="kreator-app" id="kreator-app" aria-live="polite">
+    <noscript><p class="k-center">Kreator wymaga włączonej obsługi JavaScript.</p></noscript>
+  </div>
 </section>
 
 <!-- TKANINY -->
 <section class="fabrics">
   <div class="fabrics-text reveal">
-    <p class="eyebrow" data-i18n="fab.eyebrow">Tkaniny &amp; detale</p>
+    <p class="eyebrow" data-i18n="fab.eyebrow">Tkaniny i detale</p>
     <h2 data-i18n="fab.title">Piękno tkwi <em>w szczegółach</em></h2>
-    <p data-i18n="fab.lead">Razem wybieramy materiały, które najlepiej oddadzą charakter Twojej sukni – od zwiewnych tiuli po szlachetną satynę.</p>
+    <p data-i18n="fab.lead">Razem wybieramy materiały, które najlepiej oddadzą charakter Twojej sukni – od zwiewnego tiulu po szlachetną satynę.</p>
   </div>
   <ul class="fabric-list">
-    <li class="reveal"><span class="swatch sw-lace"></span><h3 data-i18n="fab.1t">Koronka</h3><p data-i18n="fab.1">Romantyczna i kobieca – na gorset, rękawy, plecy lub całą suknię.</p></li>
+    <li class="reveal"><span class="swatch sw-lace"></span><h3 data-i18n="fab.1t">Koronka</h3><p data-i18n="fab.1">Romantyczna i kobieca – na gorset, rękawy, plecy albo całą suknię.</p></li>
     <li class="reveal"><span class="swatch sw-tulle"></span><h3 data-i18n="fab.2t">Tiul</h3><p data-i18n="fab.2">Lekkie, warstwowe spódnice i delikatne welony.</p></li>
-    <li class="reveal"><span class="swatch sw-satin"></span><h3 data-i18n="fab.3t">Satyna &amp; mikado</h3><p data-i18n="fab.3">Elegancki połysk i piękna struktura dla klasycznych fasonów.</p></li>
-    <li class="reveal"><span class="swatch sw-crepe"></span><h3 data-i18n="fab.4t">Krepa</h3><p data-i18n="fab.4">Minimalistyczne, gładkie kroje, które podkreślają sylwetkę.</p></li>
+    <li class="reveal"><span class="swatch sw-satin"></span><h3 data-i18n="fab.3t">Satyna i mikado</h3><p data-i18n="fab.3">Szlachetny połysk i piękna struktura dla klasycznych fasonów.</p></li>
+    <li class="reveal"><span class="swatch sw-crepe"></span><h3 data-i18n="fab.4t">Krepa</h3><p data-i18n="fab.4">Gładkie, minimalistyczne kroje, które podkreślają sylwetkę.</p></li>
     <li class="reveal"><span class="swatch sw-pearl"></span><h3 data-i18n="fab.5t">Zdobienia</h3><p data-i18n="fab.5">Perełki, kryształki, aplikacje – dodawane z wyczuciem.</p></li>
   </ul>
 </section>
@@ -182,14 +175,14 @@
 <!-- PROCES -->
 <section class="process" id="jak-szyjemy">
   <div class="section-head reveal">
-    <p class="eyebrow" data-i18n="proc.eyebrow">Making of</p>
+    <p class="eyebrow" data-i18n="proc.eyebrow">Krok po kroku</p>
     <h2 data-i18n="proc.title">Jak powstaje Twoja suknia</h2>
-    <p data-i18n="proc.lead">Od pierwszej rozmowy do dnia ślubu jesteśmy z Tobą na każdym etapie.</p>
+    <p data-i18n="proc.lead">Od pierwszej rozmowy aż do dnia ślubu jesteśmy z Tobą na każdym etapie.</p>
   </div>
   <ol class="steps">
-    <li class="reveal"><span class="num">01</span><h3 data-i18n="proc.1t">Konsultacja</h3><p data-i18n="proc.1">Opowiadasz nam o swoich marzeniach, pokazujesz inspiracje. Rozmawiamy o stylu, tkaninach i terminie.</p></li>
+    <li class="reveal"><span class="num">01</span><h3 data-i18n="proc.1t">Konsultacja</h3><p data-i18n="proc.1">Opowiadasz o swoich marzeniach i pokazujesz inspiracje. Rozmawiamy o stylu, tkaninach i terminie.</p></li>
     <li class="reveal"><span class="num">02</span><h3 data-i18n="proc.2t">Projekt</h3><p data-i18n="proc.2">Przygotowujemy propozycję fasonu i dobieramy materiały: koronki, tiule, satyny, zdobienia.</p></li>
-    <li class="reveal"><span class="num">03</span><h3 data-i18n="proc.3t">Pomiar</h3><p data-i18n="proc.3">Dokładnie zdejmujemy miarę, aby suknia była skrojona idealnie pod Twoją sylwetkę.</p></li>
+    <li class="reveal"><span class="num">03</span><h3 data-i18n="proc.3t">Pomiar</h3><p data-i18n="proc.3">Dokładnie zdejmujemy miarę, żeby suknia była skrojona idealnie pod Twoją sylwetkę.</p></li>
     <li class="reveal"><span class="num">04</span><h3 data-i18n="proc.4t">Przymiarki</h3><p data-i18n="proc.4">Na kolejnych przymiarkach dopracowujemy każdy detal, aż wszystko będzie dokładnie takie, jak chcesz.</p></li>
     <li class="reveal"><span class="num">05</span><h3 data-i18n="proc.5t">Odbiór</h3><p data-i18n="proc.5">Odbierasz suknię gotową na najpiękniejszy dzień – uszytą tylko dla Ciebie.</p></li>
   </ol>
@@ -197,7 +190,7 @@
 
 <!-- CYTAT -->
 <section class="quote reveal">
-  <span class="script big">C</span>
+  <span class="script big" aria-hidden="true">C</span>
   <blockquote data-i18n="quote">„Pokaż nam, o czym marzysz,<br>a my to dla Ciebie uszyjemy.”</blockquote>
 </section>
 
@@ -206,16 +199,9 @@
   <div class="section-head reveal">
     <p class="eyebrow" data-i18n="mom.eyebrow">Wasz dzień</p>
     <h2 data-i18n="mom.title">Chwile, które <em>zostają na zawsze</em></h2>
-    <p data-i18n="mom.lead">Pierwsze spojrzenie, przysięga, taniec do białego rana. Suknia, w której czujesz się sobą, sprawia, że te chwile są jeszcze piękniejsze.</p>
+    <p data-i18n="mom.lead">Pierwsze spojrzenie, przysięga, taniec do białego rana. W sukni, w której czujesz się sobą, te chwile są jeszcze piękniejsze.</p>
   </div>
-  <div class="moments-grid">
-    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-    <figure class="m-item tall reveal"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1606490194859-07c18c9f0968?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-    <figure class="m-item tall reveal"><img src="https://images.unsplash.com/photo-1606216794079-73f85bbd57d5?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
-  </div>
+  <div class="moments-grid" id="moments-grid"></div>
 </section>
 
 <!-- PORADY -->
@@ -223,7 +209,7 @@
   <div class="section-head reveal">
     <p class="eyebrow" data-i18n="blog.eyebrow">Porady</p>
     <h2 data-i18n="blog.htitle">Ślubny <em>niezbędnik</em></h2>
-    <p data-i18n="blog.hlead">Jak zorganizować ślub, wybrać suknię i niczego nie zapomnieć? Oto najważniejsze wskazówki dla Par Młodych.</p>
+    <p data-i18n="blog.hlead">Jak zorganizować ślub, wybrać suknię i o niczym nie zapomnieć? Najważniejsze wskazówki dla Par Młodych.</p>
   </div>
   <div class="post-grid three">
     <!-- BLOG-CARDS:START -->
@@ -261,67 +247,77 @@
   </div>
   <div class="faq-list reveal">
     <details><summary data-i18n="faq.1q">Z jakim wyprzedzeniem warto się zgłosić?</summary><p data-i18n="faq.1a">Szycie sukni na miarę wymaga kilku przymiarek, dlatego najlepiej odezwać się jak najwcześniej. Dokładny czas realizacji ustalamy indywidualnie podczas pierwszej konsultacji.</p></details>
-    <details><summary data-i18n="faq.2q">Ile kosztuje suknia szyta na miarę?</summary><p data-i18n="faq.2a">Cena zależy od fasonu, wybranych tkanin i zdobień. Wypełnij formularz wyceny – przygotujemy dla Ciebie indywidualną propozycję.</p></details>
-    <details><summary data-i18n="faq.3q">Nie wiem jeszcze, jakiej sukni chcę. Czy mogę przyjść?</summary><p data-i18n="faq.3a">Oczywiście! Wystarczy kilka inspiracji – zdjęcia, zapisane posty, ulubione detale. Podczas konsultacji pomożemy dobrać fason do Twojej sylwetki i stylu ślubu.</p></details>
-    <details><summary data-i18n="faq.4q">Czy mogę połączyć elementy z różnych sukni?</summary><p data-i18n="faq.4a">Tak, na tym polega szycie na miarę. Dekolt z jednej sukni, rękawy z drugiej, dół z trzeciej – zaprojektujemy suknię, która połączy wszystko w spójną całość.</p></details>
-    <details><summary data-i18n="faq.5q">Ile jest przymiarek?</summary><p data-i18n="faq.5a">Liczba przymiarek zależy od projektu. Spotykamy się tyle razy, ile potrzeba, aby suknia leżała idealnie.</p></details>
+    <details><summary data-i18n="faq.3q">Nie wiem jeszcze, jakiej sukni chcę. Czy mogę przyjść?</summary><p data-i18n="faq.3a">Oczywiście! Wystarczy kilka inspiracji: zdjęcia, zapisane posty, ulubione detale. Podczas konsultacji pomożemy dobrać fason do Twojej sylwetki i charakteru ślubu.</p></details>
+    <details><summary data-i18n="faq.4q">Czy mogę połączyć elementy z różnych sukni?</summary><p data-i18n="faq.4a">Tak – na tym polega szycie na miarę. Dekolt z jednej sukni, rękawy z drugiej, dół z trzeciej: zaprojektujemy suknię, która połączy wszystko w spójną całość.</p></details>
+    <details><summary data-i18n="faq.5q">Ile jest przymiarek?</summary><p data-i18n="faq.5a">To zależy od projektu. Spotykamy się tyle razy, ile trzeba, żeby suknia leżała idealnie.</p></details>
   </div>
 </section>
 
-<!-- WYCENA -->
+<!-- FORMULARZ -->
 <section class="quote-form" id="wycena">
   <div class="form-intro reveal">
-    <p class="eyebrow" data-i18n="form.eyebrow">Wycena</p>
-    <h2 data-i18n="form.title">Zapytaj o swoją suknię</h2>
-    <p data-i18n="form.lead">Każda suknia jest inna, dlatego wycenę przygotowujemy indywidualnie. Napisz kilka słów o swoich planach, a odezwiemy się z propozycją terminu konsultacji.</p>
-    <ul class="checklist">
-      <li data-i18n="form.c1">Indywidualna wycena</li>
-      <li data-i18n="form.c2">Autorski projekt</li>
-      <li data-i18n="form.c3">Szycie w całości na miarę</li>
-    </ul>
+    <p class="eyebrow" data-i18n="form.eyebrow">Kontakt z pracownią</p>
+    <h2 data-i18n="form.title">Opowiedz nam o swojej sukni</h2>
+    <p data-i18n="form.lead">Każda suknia jest inna, dlatego wszystko ustalamy indywidualnie. Napisz kilka słów o swoich planach, a odezwiemy się z propozycją terminu konsultacji.</p>
     <div class="consult">
       <h3 data-i18n="cons.title">Pierwsza konsultacja</h3>
       <dl>
-        <dt data-i18n="cons.where">Gdzie</dt><dd data-i18n="cons.wherev">W naszej pracowni, woj. lubelskie</dd>
-        <dt data-i18n="cons.time">Ile trwa</dt><dd><span class="todo" data-i18n="cons.timev">[czas trwania – do uzupełnienia]</span></dd>
-        <dt data-i18n="cons.bring">Co zabrać</dt><dd data-i18n="cons.bringv">Inspiracje (np. tablicę z kreatora lub swoją selekcję), buty ślubne, jeśli już je masz.</dd>
+        <div><dt data-i18n="cons.where">Gdzie</dt><dd data-i18n="cons.wherev">W naszej pracowni, w województwie lubelskim</dd></div>
+        <div id="cons-time" hidden><dt data-i18n="cons.time">Ile trwa</dt><dd></dd></div>
+        <div><dt data-i18n="cons.bring">Co zabrać</dt><dd data-i18n="cons.bringv">Swoje inspiracje (np. tablicę z kreatora albo listę ulubionych sukni) i buty ślubne, jeśli już je masz.</dd></div>
       </dl>
     </div>
   </div>
   <form class="form reveal" id="form" novalidate>
     <div class="row">
-      <label><span data-i18n="form.name">Imię</span><input type="text" name="imie" required autocomplete="given-name"></label>
-      <label><span data-i18n="form.phone">Telefon</span><input type="tel" name="telefon" autocomplete="tel"></label>
+      <div class="field"><label for="f-imie" data-i18n="form.name">Imię</label><input id="f-imie" type="text" name="imie" required autocomplete="given-name" aria-describedby="e-imie"><p class="field-err" id="e-imie"></p></div>
+      <div class="field"><label for="f-tel"><span data-i18n="form.phone">Telefon</span> <small data-i18n="form.opt">(opcjonalnie)</small></label><input id="f-tel" type="tel" name="telefon" autocomplete="tel"></div>
     </div>
-    <label><span>E-mail</span><input type="email" name="email" required autocomplete="email"></label>
+    <div class="field"><label for="f-email">E-mail</label><input id="f-email" type="email" name="email" required autocomplete="email" aria-describedby="e-email"><p class="field-err" id="e-email"></p></div>
     <div class="row">
-      <label><span data-i18n="form.date">Data ślubu</span><input type="date" name="data"></label>
-      <label><span data-i18n="form.style">Wymarzony fason</span>
-        <select name="fason">
+      <div class="field"><label for="f-data" data-i18n="form.date">Data ślubu</label><input id="f-data" type="date" name="data" aria-describedby="e-data"><p class="field-err" id="e-data"></p></div>
+      <div class="field"><label for="f-fason" data-i18n="form.style">Wymarzony fason</label>
+        <select id="f-fason" name="fason">
           <option value="" data-i18n="form.o0">Jeszcze nie wiem</option>
-          <option data-i18n="form.o1">Księżniczka</option>
-          <option data-i18n="form.o2">Litera A</option>
-          <option data-i18n="form.o3">Syrenka</option>
-          <option data-i18n="form.o4">Prosta / minimalistyczna</option>
-          <option data-i18n="form.o5">Kombinezon</option>
-          <option data-i18n="form.o6">Inny</option>
+          <option value="ksiezniczka" data-i18n="form.o1">Księżniczka</option>
+          <option value="litera-a" data-i18n="form.o2">Litera A</option>
+          <option value="syrenka" data-i18n="form.o3">Syrenka</option>
+          <option value="prosta" data-i18n="form.o4">Prosta, minimalistyczna</option>
+          <option value="kombinezon" data-i18n="form.o5">Kombinezon</option>
+          <option value="inny" data-i18n="form.o6">Coś innego</option>
         </select>
-      </label>
+      </div>
     </div>
-    <label><span data-i18n="form.msg">Opowiedz nam o swojej wymarzonej sukni</span><textarea name="wiadomosc" rows="4" placeholder="Fason, tkaniny, inspiracje, link do zdjęć…" data-i18n-ph="form.ph"></textarea></label>
-    <button class="btn btn-dark" type="submit" data-i18n="form.send">Wyślij zapytanie</button>
+    <div class="field"><label for="f-msg" data-i18n="form.msg">Twoja wiadomość</label><textarea id="f-msg" name="wiadomosc" rows="5" placeholder="Fason, tkaniny, inspiracje, link do zdjęć…" data-i18n-ph="form.ph"></textarea></div>
+    <div class="attachments" hidden>
+      <p class="att-title" data-i18n="form.att">Dołączone do wiadomości</p>
+      <ul></ul>
+    </div>
+    <button class="btn btn-dark" type="submit" data-i18n="form.send">Wyślij wiadomość</button>
+    <p class="form-demo" hidden data-i18n="form.demo">Wersja prezentacyjna strony: wysyłka formularza zostanie podłączona przed publikacją.</p>
     <p class="form-note" role="status" aria-live="polite"></p>
+    <div class="form-offline" hidden>
+      <h3 tabindex="-1" data-i18n="form.offT">Wiadomość nie została wysłana</h3>
+      <p data-i18n="form.offP">To wersja prezentacyjna strony i formularz nie jest jeszcze podłączony. Twoja wiadomość jest gotowa poniżej: skopiuj ją i wyślij nam na Instagramie.</p>
+      <label class="sr-only" for="f-copy" data-i18n="form.offL">Treść wiadomości</label>
+      <textarea id="f-copy" rows="6" readonly></textarea>
+      <div class="offline-actions">
+        <button type="button" class="btn btn-ghost" data-copy data-i18n="form.copy">Skopiuj wiadomość</button>
+        <a class="btn btn-ghost" href="https://www.instagram.com/coccinellesuknieslubne/" data-ig target="_blank" rel="noopener" data-i18n="form.ig">Otwórz Instagram</a>
+      </div>
+      <p class="copy-msg" role="status" aria-live="polite"></p>
+    </div>
   </form>
 </section>
 
 <!-- INSTAGRAM -->
 <section class="insta reveal">
-  <a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener" class="insta-link">
+  <a href="https://www.instagram.com/coccinellesuknieslubne/" data-ig target="_blank" rel="noopener" class="insta-link">
     <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.2"/><circle cx="17.3" cy="6.7" r=".9" fill="currentColor"/></svg>
     <span class="script" data-i18n="insta.title">Zajrzyj do naszej pracowni</span>
     <span class="insta-handle">@coccinellesuknieslubne</span>
   </a>
-  <p data-i18n="insta.lead">Nowe suknie, kulisy szycia i relacje „making of” – na bieżąco na Instagramie.</p>
+  <p data-i18n="insta.lead">Nowe suknie i kulisy pracy w pracowni – na bieżąco na Instagramie.</p>
 </section>
 
 <!-- KONTAKT -->
@@ -333,18 +329,18 @@
   <div class="contact-grid reveal">
     <div class="c-card">
       <h3 data-i18n="ct.1t">Pracownia</h3>
-      <p><span class="todo" data-i18n="ct.addr">[Adres pracowni – do uzupełnienia]</span><br><span data-i18n="ct.region">województwo lubelskie</span></p>
+      <p id="ct-address">województwo lubelskie</p>
       <p class="muted" data-i18n="ct.visit">Wizyty po wcześniejszym umówieniu</p>
     </div>
-    <div class="c-card">
-      <h3 data-i18n="ct.2t">Telefon &amp; e-mail</h3>
-      <p><span class="todo" data-i18n="ct.phone">[+48 telefon – do uzupełnienia]</span><br><span class="todo" data-i18n="ct.mail">[e-mail – do uzupełnienia]</span></p>
+    <div class="c-card" id="ct-reach" hidden>
+      <h3 data-i18n="ct.2t">Telefon i e-mail</h3>
+      <p></p>
     </div>
     <div class="c-card">
-      <h3>Social media</h3>
-      <p><a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener">Instagram · @coccinellesuknieslubne</a><br>
-      <!-- TODO: podmień na dokładny adres strony na Facebooku -->
-      <a href="https://www.facebook.com/search/top?q=Coccinelle%20Suknie%20%C5%9Alubne" target="_blank" rel="noopener">Facebook · Coccinelle Suknie Ślubne</a></p>
+      <h3 data-i18n="ct.3t">Napisz do nas</h3>
+      <p><a href="https://www.instagram.com/coccinellesuknieslubne/" data-ig target="_blank" rel="noopener">Instagram · @coccinellesuknieslubne</a></p>
+      <p hidden><a id="ct-fb" href="#" target="_blank" rel="noopener">Facebook · Coccinelle Suknie Ślubne</a></p>
+      <p class="muted"><a href="#wycena" data-i18n="ct.form">lub przez formularz na tej stronie</a></p>
     </div>
   </div>
 </section>
@@ -352,20 +348,16 @@
 </main>
 
 <footer class="footer">
-  <span class="brand-mark sm">C</span>
-  <p data-i18n="foot.1">Coccinelle Suknie Ślubne · Profesjonalna Autorska Pracownia Krawiecka</p>
-  <p class="muted">© <span id="year"></span> Coccinelle. <span data-i18n="foot.2">Zdjęcia na stronie mają charakter poglądowy.</span></p>
-  <p class="muted credits"><span data-i18n="foot.cr">Zdjęcia: Unsplash</span> – <a href="https://unsplash.com/@eugenivy_now?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Eugenia Pan'kiv</a>, <a href="https://unsplash.com/@wedding_photography?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Wedding Photography</a>, <a href="https://unsplash.com/@orlovamaria?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Maria Orlova</a>, <a href="https://unsplash.com/@jonathanborba?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Jonathan Borba</a>, <a href="https://unsplash.com/@tom_christian?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Thomas Christian</a>, <a href="https://unsplash.com/@infectedluna?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Asdrubal luna</a>, <a href="https://unsplash.com/@fotografosamuelcruz?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Fotógrafo Samuel Cruz</a>, <a href="https://unsplash.com/@srosinger3997?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Samantha Gades</a>, <a href="https://unsplash.com/@abrosimova_marina_foto?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Marina Abrosimova</a>, <a href="https://unsplash.com/@petrov?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Petr Ovralov</a>, <a href="https://unsplash.com/@jakobowens1?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Jakob Owens</a>, <a href="https://unsplash.com/@nate_dumlao?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Nathan Dumlao</a>, <a href="https://unsplash.com/@bekmanis?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Elvis Bekmanis</a>, <a href="https://unsplash.com/@victoriapriessnitz?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Victoria Priessnitz</a>.</p>
+  <p class="footer-brand">Coccinelle<small>Suknie Ślubne</small></p>
+  <p data-i18n="foot.1">Autorska pracownia krawiecka · województwo lubelskie</p>
+  <p class="muted">© <span id="year"></span> Coccinelle. <span data-provisional data-i18n="foot.2">Wersja prezentacyjna: zdjęcia mają charakter poglądowy i nie przedstawiają realizacji pracowni.</span></p>
+  <p class="muted credits" id="credits"></p>
 </footer>
 
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lb-close" aria-label="×">×</button>
-  <img alt="">
-  <p class="lb-cap"></p>
-</div>
-
-<script src="i18n.js?v=6"></script>
-<script src="script.js?v=6"></script>
-<script src="designer.js?v=6"></script>
+<script src="i18n.js?v=7"></script>
+<script src="content.js?v=7"></script>
+<script src="script.js?v=7"></script>
+<script src="gallery.js?v=7"></script>
+<script src="designer.js?v=7"></script>
 </body>
 </html>

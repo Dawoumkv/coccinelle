@@ -8,7 +8,7 @@ from articles import ARTICLES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
-V = "6"  # wersja CSS/JS (odświeżenie cache)
+V = "7"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -49,39 +49,41 @@ HEAD = """<!doctype html>
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../style.css?v={v}">
+<script>document.documentElement.classList.add('js')</script>
 {ld}</head>
 <body class="blog-page">
+<a class="skip-link" href="#main" data-i18n="skip">Przejdź do treści</a>
 
 <header class="nav scrolled" id="top">
   <div class="nav-left">
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
-    <nav class="nav-links">
+    <button class="nav-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span></button>
+    <nav class="nav-links" id="nav-links" aria-label="Menu">
       <a href="../index.html#o-nas" data-i18n="nav.about">O nas</a>
       <a href="../index.html#suknie" data-i18n="nav.dresses">Inspiracje</a>
       <a href="../index.html#kreator" data-i18n="nav.creator">Twoja suknia</a>
       <a href="index.html" data-i18n="nav.blog" class="current">Porady</a>
       <a href="../index.html#pytania" data-i18n="nav.faq">Pytania</a>
       <a href="../index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
-      <a href="../index.html#wycena" class="nav-mobile-only" data-i18n="nav.quote">Wycena</a>
+      <a href="../index.html#wycena" class="nav-mobile-only" data-i18n="nav.quote">Napisz do nas</a>
     </nav>
   </div>
-  <a href="../index.html" class="brand" aria-label="Coccinelle">
+  <a href="../index.html" class="brand" aria-label="Coccinelle Suknie Ślubne">
     <span class="brand-text">Coccinelle<small>Suknie Ślubne</small></span>
   </a>
   <div class="nav-right">
-    <a href="../index.html#wycena" class="nav-cta" data-i18n="nav.quote">Wycena</a>
+    <a href="../index.html#wycena" class="nav-cta" data-i18n="nav.quote">Napisz do nas</a>
   </div>
 </header>
 
-<main>
+<main id="main">
 """
 
 FOOT = """
 </main>
 
 <footer class="footer">
-  <span class="brand-mark sm">C</span>
-  <p data-i18n="foot.1">Coccinelle Suknie Ślubne · Profesjonalna Autorska Pracownia Krawiecka</p>
+  <p class="footer-brand">Coccinelle<small>Suknie Ślubne</small></p>
+  <p data-i18n="foot.1">Autorska pracownia krawiecka · województwo lubelskie</p>
   <p class="muted">© <span id="year"></span> Coccinelle. <span data-i18n="foot.3">Zdjęcia ilustracyjne: Unsplash.</span></p>
 </footer>
 
@@ -135,8 +137,8 @@ def build_article(i, a):
         back = "Wszystkie porady" if lang == "pl" else "Tous les conseils"
         cta_t = "Marzysz o sukni szytej na miarę?" if lang == "pl" else "Vous rêvez d'une robe sur mesure ?"
         cta_p = ("Pokaż nam, o czym marzysz, a my to dla Ciebie uszyjemy." if lang == "pl"
-                 else "Montrez-nous ce dont vous rêvez, et nous le coudrons pour vous.")
-        cta_b = "Zapytaj o wycenę" if lang == "pl" else "Demander un devis"
+                 else "La robe dont vous rêvez, créée à vos mesures.")
+        cta_b = "Napisz do nas" if lang == "pl" else "Écrire à l’atelier"
         return f"""<article class="post" data-lang="{lang}"{hid}>
   <header class="post-head">
     <a class="post-back" href="index.html">← {back}</a>
