@@ -302,7 +302,8 @@ dialog::backdrop{background:rgba(30,28,27,.72)}
 .board-grid{display:grid;grid-template-columns:1fr 1fr 1.15fr;gap:1rem;align-items:stretch}
 .board-grid figure{position:relative;background:#fff;border:1px solid var(--line);margin:0}
 .board-grid figcaption{position:absolute;left:.8rem;bottom:.6rem;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.88);padding:.1rem .45rem}
-.b-sketch{display:flex;align-items:center;justify-content:center;padding:1rem 1rem 2rem}
+.b-sketch{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem}
+.b-sketch figcaption{position:static;background:none;padding:0;margin-top:.5rem}
 .b-sketch .croquis{width:100%;max-height:420px}
 .b-photo img{width:100%;height:100%;object-fit:cover;min-height:300px}
 .b-details{background:#fff;border:1px solid var(--line);padding:1.1rem 1.3rem}
@@ -332,14 +333,15 @@ dialog::backdrop{background:rgba(30,28,27,.72)}
   .k-nav .btn{padding:.8rem 1.2rem}
   .board-actions{flex-direction:column}
   .b-photo img{min-height:220px}
+  .b-photo figcaption{font-size:.6rem;letter-spacing:.08em;left:.4rem;right:.4rem;bottom:.4rem}
 }
 
 /* Kalendarz sukni */
 .timeline{margin-top:1.6rem;background:#fff;border:1px solid var(--line);padding:clamp(1.2rem,3vw,2rem)}
 .timeline h4{font-weight:400;font-size:1.65rem;text-align:center}
 .tl-sub{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:1.2rem}
-.timeline ol{list-style:none;display:grid;grid-template-columns:repeat(7,1fr);gap:.9rem}
-@media (max-width:980px){.timeline ol{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))}}
+.timeline ol{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.9rem}
+
 .timeline li{border-top:2px solid var(--ink);padding-top:.7rem;font-size:.86rem;color:var(--muted);line-height:1.45}
 .timeline li.soon{border-color:var(--rose)}
 .timeline li strong{display:block;font-family:var(--serif);font-weight:500;font-size:1.12rem;color:var(--ink);margin:.15rem 0}

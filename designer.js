@@ -149,11 +149,12 @@
     if (isNaN(wed) || wed < now) return '';
     const left = (wed - now) / MONTH;
     const warn = left < 4 ? `<p class="tl-warn">${T('Do ślubu zostało niewiele czasu. Napisz do nas jak najszybciej – sprawdzimy, co da się zrobić.', 'Le mariage approche. Écrivez-nous dès que possible : nous verrons ensemble ce qui est faisable.')}</p>` : '';
-    const items = MILESTONES.map(s => {
-      const d = new Date(wed.getTime() - s.m * MONTH);
-      const soon = d < now;
-      return `<li class="${soon ? 'soon' : ''}"><span class="tl-date">${soon ? T('jak najszybciej', 'dès que possible') : fmtMonth(d)}</span><strong>${s.t}</strong><span>${s.d}</span></li>`;
-    }).join('');
+    const soon = MILESTONES.filter(s => new Date(wed.getTime() - s.m * MONTH) < now);
+    const later = MILESTONES.filter(s => !soon.includes(s));
+    let items = '';
+    if (soon.length === 1) items += `<li class="soon"><span class="tl-date">${T('jak najszybciej', 'dès que possible')}</span><strong>${soon[0].t}</strong><span>${soon[0].d}</span></li>`;
+    if (soon.length > 1) items += `<li class="soon"><span class="tl-date">${T('jak najszybciej', 'dès que possible')}</span><strong>${soon.map(s => s.t).join(' · ')}</strong><span>${T('te etapy zaplanujemy razem w krótszym czasie', 'ces étapes seront planifiées ensemble sur un temps plus court')}</span></li>`;
+    items += later.map(s => `<li><span class="tl-date">${fmtMonth(new Date(wed.getTime() - s.m * MONTH))}</span><strong>${s.t}</strong><span>${s.d}</span></li>`).join('');
     return `<div class="timeline"><h4>${T('Kalendarz Twojej sukni', 'Le calendrier de votre robe')}</h4>
       <p class="tl-sub">${T('Ślub', 'Mariage')} · ${fmtDay(wed)}</p>${warn}<ol>${items}</ol>
       <p class="tl-note">${T('To kalendarz orientacyjny. Dokładne terminy ustalimy razem podczas konsultacji.', 'Ce calendrier est indicatif. Les dates exactes seront fixées ensemble lors de la consultation.')}</p></div>`;
