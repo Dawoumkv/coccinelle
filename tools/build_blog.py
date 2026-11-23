@@ -8,7 +8,7 @@ from articles import ARTICLES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
-V = "4"  # wersja CSS/JS (odświeżenie cache)
+V = "5"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -66,7 +66,6 @@ HEAD = """<!doctype html>
     </nav>
   </div>
   <a href="../index.html" class="brand" aria-label="Coccinelle">
-    <span class="brand-mark">C</span>
     <span class="brand-text">Coccinelle<small>Suknie Ślubne</small></span>
   </a>
   <div class="nav-right">
