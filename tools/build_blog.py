@@ -10,7 +10,7 @@ from legal import LEGAL, UPDATED
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
 BASE = "https://dawoumkv.github.io/coccinelle/"
-V = "15"  # wersja CSS/JS (odświeżenie cache)
+V = "16"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"

@@ -23,6 +23,27 @@
   if (c.instagram) ownerLines.push(`Instagram: <a href="https://www.instagram.com/${esc(c.instagram)}/" target="_blank" rel="noopener">@${esc(c.instagram)}</a>`);
   document.querySelectorAll('[data-owner]').forEach(el => { el.innerHTML = ownerLines.join('<br>'); });
 
+  // ---------- Telefon na wierzchu: pasek u góry + przyciski na dole (mobile) ----------
+  // Téléphone mis en avant : bandeau en haut + barre d'appel en bas (mobile)
+  if (c.phone) {
+    const tel = 'tel:' + c.phone.replace(/\s/g, '');
+    const ico = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>';
+    const tr = x => (x && typeof x === 'object' ? (x[L] || x.pl || '') : (x || ''));
+    const hrs = (c.hours || []).filter(x => /\d/.test(tr(x.h))).map(x => `${esc(tr(x.d))} ${esc(tr(x.h).replace(/:00/g, ''))}`).join(' · ');
+    const top = document.createElement('div');
+    top.className = 'topbar';
+    top.innerHTML = `<a href="${esc(tel)}" aria-label="${T('Zadzwoń', 'Appeler')}: ${esc(c.phone)}">${ico}<span>${esc(c.phone)}</span></a>${hrs ? `<span class="tb-more">${hrs}${c.address ? ' · ' + esc(c.address) : ''}</span>` : ''}`;
+    document.body.prepend(top);
+    const inSub0 = /\/(porady|informacje)\//.test(location.pathname);
+    const form = (inSub0 ? '../index.html' : '') + '#wycena';
+    const cb = document.createElement('nav');
+    cb.className = 'callbar';
+    cb.setAttribute('aria-label', T('Szybki kontakt', 'Contact rapide'));
+    cb.innerHTML = `<a class="cb-call" href="${esc(tel)}">${ico}<span>${T('Zadzwoń', 'Appeler')}</span></a><a class="cb-write" href="${form}">${T('Napisz do nas', 'Nous écrire')}</a>`;
+    document.body.appendChild(cb);
+    document.body.classList.add('has-topbar', 'has-callbar');
+  }
+
   // ---------- Zgoda na cookies: mapa Google i (opcjonalnie) statystyki ----------
   // Consentement : carte Google et, si un ID est renseigné, statistiques GA4
   const id = ((SITE.analytics || {}).ga4 || '').trim();
