@@ -18,7 +18,7 @@
 
   // Dane właściciela na stronach prawnych · Identité sur les pages légales
   const o = SITE.owner || {}, c = SITE.contact || {};
-  const ownerLines = [o.name, o.company, o.address, o.nip ? 'NIP: ' + o.nip : '', o.email || c.email]
+  const ownerLines = [o.name, o.company, o.address, o.nip ? 'NIP: ' + o.nip : '', o.email || (typeof siteEmail === 'function' ? siteEmail() : '')]
     .filter(Boolean).map(esc);
   if (c.instagram) ownerLines.push(`Instagram: <a href="https://www.instagram.com/${esc(c.instagram)}/" target="_blank" rel="noopener">@${esc(c.instagram)}</a>`);
   document.querySelectorAll('[data-owner]').forEach(el => { el.innerHTML = ownerLines.join('<br>'); });

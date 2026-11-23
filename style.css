@@ -687,3 +687,4 @@ dialog::backdrop{background:rgba(30,28,27,.72)}
   body.menu-open .callbar{display:none}
 }
 @media print{.callbar{display:none!important}}
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}

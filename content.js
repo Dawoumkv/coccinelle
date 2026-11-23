@@ -22,7 +22,8 @@ const SITE = {
     // Mapa Google (bez klucza API) – puste = brak mapy · Carte Google, vide = pas de carte
     map: 'Coccinelle, 3 Maja 2, 22-500 Hrubieszów',
     phone: '+48 500 122 789',
-    email: '',              // np. 'kontakt@coccinelle.pl'
+    // E-mail w dwóch częściach (ochrona przed robotami) · e-mail en deux parties (anti-robots)
+    email: ['pracowniacoccinelle', 'gmail.com'],
     instagram: 'coccinellesuknieslubne',
     facebook: 'https://www.facebook.com/pracowniacoccinelle/',
     consultDuration: { pl: '', fr: '' }, // np. { pl: 'ok. 1,5 godziny', fr: 'environ 1 h 30' }
@@ -54,7 +55,9 @@ const SITE = {
   // Adres, na który formularz wysyła zapytania (np. Formspree: 'https://formspree.io/f/xxxx').
   // Pusty = formularz niepodłączony: strona uczciwie o tym informuje i nic nie udaje.
   // Vide = formulaire non connecté : la page l'indique clairement, sans fausse confirmation.
-  formEndpoint: '',
+  // 'formsubmit' = FormSubmit.co na adres z contact.email (pierwsza wiadomość wysyła e-mail aktywacyjny).
+  // Po aktywacji można wpisać tu losowy alias od FormSubmit: { formsubmit: 'abc123…' }.
+  formEndpoint: 'formsubmit',
 
   // Stopka: „Strona wykonana przez …” – puste = ukryte
   // Pied de page : « Site réalisé par … » – vide = masqué
@@ -69,6 +72,19 @@ const SITE = {
   // Statistiques et carte Google : chargées seulement après accord dans le bandeau.
   analytics: { ga4: '' }
 };
+
+// Adres e-mail składany w przeglądarce · adresse assemblée dans le navigateur
+function siteEmail() {
+  const e = SITE.contact.email;
+  return Array.isArray(e) ? e.join('@') : (e || '');
+}
+function formUrl() {
+  const f = SITE.formEndpoint;
+  if (!f) return '';
+  if (f === 'formsubmit') return siteEmail() ? 'https://formsubmit.co/ajax/' + siteEmail() : '';
+  if (typeof f === 'object' && f.formsubmit) return 'https://formsubmit.co/ajax/' + f.formsubmit;
+  return f;
+}
 
 // ---------- Zdjęcia sekcji · Images des sections ----------
 const IMAGES = {

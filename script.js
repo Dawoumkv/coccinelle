@@ -47,7 +47,6 @@
     if (reach) {
       const lines = [];
       if (c.phone) lines.push(`<a href="tel:${esc(c.phone.replace(/\s/g, ''))}">${esc(c.phone)}</a>`);
-      if (c.email) lines.push(`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`);
       if (lines.length) { reach.querySelector('p').innerHTML = lines.join('<br>'); reach.hidden = false; }
     }
     const hours = document.getElementById('ct-hours');
@@ -108,6 +107,8 @@
       rs.hidden = false;
     }
 
+    const mail = document.getElementById('ct-mail'), em = siteEmail();
+    if (mail && em) { const a = mail.querySelector('a'); a.href = 'mailto:' + em; a.textContent = em; mail.hidden = false; }
     const fb = document.getElementById('ct-fb');
     if (fb && c.facebook) { fb.href = c.facebook; fb.parentElement.hidden = false; }
     const dur = document.getElementById('cons-time');
@@ -154,7 +155,8 @@
     const note = form.querySelector('.form-note');
     const attBox = form.querySelector('.attachments');
     const offline = form.querySelector('.form-offline');
-    const endpoint = hasContent ? SITE.formEndpoint : '';
+    const endpoint = hasContent ? formUrl() : '';
+    const started = Date.now();
     const AKEY = 'coccinelle-zalaczniki';
     let att = store.get(AKEY) || {};
     if (!endpoint) { const d = form.querySelector('.form-demo'); if (d) d.hidden = false; }
@@ -241,17 +243,27 @@
         offline.querySelector('h3').focus();
         return;
       }
+      // Anty-spam: ukryte pole i zbyt szybkie wysłanie · anti-spam : champ piège et envoi trop rapide
+      if ((form._honey && form._honey.value) || Date.now() - started < 3000) {
+        note.textContent = T('Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.', 'Le message n’a pas pu être envoyé. Réessayez dans un instant.');
+        note.className = 'form-note err';
+        return;
+      }
       const btn = form.querySelector('[type=submit]');
       btn.disabled = true; note.className = 'form-note'; note.textContent = T('Wysyłanie…', 'Envoi en cours…');
       try {
         const res = await fetch(endpoint, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ imie: form.imie.value.trim(), email: form.email.value.trim(), telefon: form.telefon.value.trim(), data: form.data.value, fason: form.fason.value, wiadomosc: compose() }) });
-        if (!res.ok) throw new Error(res.status);
+          body: JSON.stringify({ imie: form.imie.value.trim(), email: form.email.value.trim(), telefon: form.telefon.value.trim(), data: form.data.value, fason: form.fason.value, wiadomosc: compose(),
+            _subject: 'Nowa wiadomość ze strony Coccinelle – ' + form.imie.value.trim(), _template: 'table', _captcha: 'false', _honey: '' }) });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || String(out.success) === 'false') throw new Error(out.message || res.status);
         note.textContent = T('Dziękujemy! Wiadomość dotarła do pracowni. Odezwiemy się najszybciej, jak to możliwe.', 'Merci ! Votre message est bien arrivé à l’atelier. Nous vous répondrons très vite.');
         note.className = 'form-note ok';
         form.reset(); att = {}; store.set(AKEY, att); renderAtt();
       } catch (err) {
-        note.textContent = T('Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę albo napisz do nas na Instagramie.', 'Le message n’a pas pu être envoyé. Réessayez dans un instant ou écrivez-nous sur Instagram.');
+        const em = siteEmail();
+        note.innerHTML = esc(T('Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę', 'Le message n’a pas pu être envoyé. Réessayez dans un instant')) +
+          (em ? ` ${T('albo napisz do nas', 'ou écrivez-nous à')}: <a href="mailto:${esc(em)}">${esc(em)}</a>.` : '.');
         note.className = 'form-note err';
       } finally { btn.disabled = false; }
     });
