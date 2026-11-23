@@ -149,7 +149,7 @@
       const st = STEPS[0].opts.find(o => o.v === state.styl) || STEPS[0].opts[0];
       const fa = STEPS[1].opts.find(o => o.v === state.fason) || STEPS[1].opts[0];
       const extra = { romantyczny: ['1525169087805-031a4da0623c', '1515934751635-c81c6bc9a2d8'], minimalistyczny: ['1591221662157-6f62de5508eb', '1532454781337-fc3edff34f91'], klasyczny: ['1524563970700-a302b6888e17', '1550005809-91ad75fb315f'], nowoczesny: ['1622398925373-3f91b1e275f5', '1521543832500-49e69fb2bea2'] }[st.v] || [];
-      const imgs = [fa.img, st.img !== fa.img ? st.img : extra[1], ...extra].slice(0, 4);
+      const imgs = [fa.img, st.img !== fa.img ? st.img : extra[1], extra[0]];
       const chips = [
         [T('Styl', 'Style'), label('styl', state.styl)], [T('Sylwetka', 'Silhouette'), label('fason', state.fason)],
         [T('Dekolt', 'Décolleté'), label('dekolt', state.dekolt)], [T('Rękawy', 'Manches'), label('rekawy', state.rekawy)],
