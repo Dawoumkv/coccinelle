@@ -5,11 +5,12 @@ Uruchom z katalogu głównego repozytorium:  python3 tools/build_blog.py
 import html, json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from articles import ARTICLES
+from legal import LEGAL, UPDATED
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
 BASE = "https://dawoumkv.github.io/coccinelle/"
-V = "10"  # wersja CSS/JS (odświeżenie cache)
+V = "11"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -28,6 +29,8 @@ def blocks(body):
         elif kind == "h2": out.append(f"<h2>{html.escape(val)}</h2>")
         elif kind in ("ul", "ol"):
             out.append(f"<{kind}>" + "".join(f"<li>{html.escape(x)}</li>" for x in val) + f"</{kind}>")
+        elif kind == "owner":
+            out.append('<p class="legal-owner" data-owner>Coccinelle Suknie Ślubne</p>')
         elif kind == "tip":
             out.append(f'<aside class="tip"><span class="script">C</span><p>{html.escape(val)}</p></aside>')
     return "\n".join(out)
@@ -90,11 +93,19 @@ FOOT = """
 <footer class="footer">
   <p class="footer-brand">Coccinelle<small>Suknie Ślubne</small></p>
   <p data-i18n="foot.1">Autorska pracownia krawiecka · województwo lubelskie</p>
-  <p class="muted">© <span id="year"></span> Coccinelle. <span data-i18n="foot.3">Zdjęcia ilustracyjne: Unsplash.</span></p>
+  <nav class="footer-links" aria-label="Informacje prawne" data-i18n-aria="foot.legal">
+    <a href="../informacje/regulamin.html" data-i18n="foot.terms">Regulamin</a>
+    <a href="../informacje/prywatnosc.html" data-i18n="foot.privacy">Polityka prywatności i cookies</a>
+    <button type="button" class="cookie-open" data-i18n="foot.cookies" hidden>Ustawienia cookies</button>
+  </nav>
+  <p class="muted">© <span id="year"></span> Coccinelle. <span data-provisional data-i18n="foot.2">Wersja prezentacyjna: zdjęcia mają charakter poglądowy i nie przedstawiają realizacji pracowni.</span></p>
+  <p class="muted made-by" id="made-by" hidden></p>
 </footer>
 
 <script src="../i18n.js?v={v}"></script>
+<script src="../content.js?v={v}"></script>
 <script src="../script.js?v={v}"></script>
+<script src="../footer.js?v={v}"></script>
 </body>
 </html>
 """
@@ -179,6 +190,34 @@ def build_article(i, a):
     with open(os.path.join(OUT, a["slug"] + ".html"), "w", encoding="utf-8") as fh:
         fh.write(page)
 
+def build_legal(doc):
+    out = os.path.join(ROOT, "informacje")
+    os.makedirs(out, exist_ok=True)
+    p = doc["pl"]
+    page = HEAD.format(title=f"{p['title']} · Coccinelle", desc=html.escape(p["lead"]), ogtype="website",
+                       url=BASE + "informacje/" + doc["slug"] + ".html",
+                       ogimg=f'<meta property="og:image" content="{BASE}images/og-image.jpg">\n', v=V, ld="")
+    page = page.replace('href="index.html" data-i18n="nav.blog" class="current"', 'href="../porady/index.html" data-i18n="nav.blog"')
+    page = page.replace('<body class="blog-page">', '<body class="blog-page legal-page">')
+    for lang in ("pl", "fr"):
+        d = doc[lang]
+        hid = "" if lang == "pl" else " hidden"
+        page += f"""<article class="post legal" data-lang="{lang}"{hid}>
+  <header class="post-head">
+    <p class="eyebrow">Coccinelle</p>
+    <h1>{html.escape(d['title'])}</h1>
+    <p class="lead">{html.escape(d['lead'])}</p>
+  </header>
+  <div class="post-body">
+{blocks(d['body'])}
+    <p class="legal-updated">{UPDATED[lang]}</p>
+  </div>
+</article>
+"""
+    page += FOOT.format(v=V)
+    with open(os.path.join(out, doc["slug"] + ".html"), "w", encoding="utf-8") as fh:
+        fh.write(page)
+
 def home_cards():
     """Fragment HTML z 3 kartami na stronę główną (wklejany do index.html)."""
     return "\n".join(card(a, "porady/") for a in ARTICLES[:3])
@@ -188,6 +227,8 @@ if __name__ == "__main__":
     build_index()
     for i, a in enumerate(ARTICLES):
         build_article(i, a)
+    for doc in LEGAL:
+        build_legal(doc)
     # podmiana kart na stronie głównej między znacznikami
     idx = os.path.join(ROOT, "index.html")
     s = open(idx, encoding="utf-8").read()

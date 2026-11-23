@@ -60,7 +60,7 @@ const FR = {
   'ct.eyebrow':'Contact','ct.title':'Bienvenue à l’atelier','ct.1t':'L’atelier','ct.visit':'Visites uniquement sur rendez-vous',
   'ct.2t':'Téléphone et e-mail','ct.3t':'Nous écrire','ct.form':'ou via le formulaire de cette page',
   'foot.1':'Atelier de création couture · région de Lublin, Pologne','foot.2':'Version de présentation : les photos sont des illustrations et ne montrent pas les créations de l’atelier.',
-  'foot.3':'Photos d’illustration : Unsplash.'
+  'foot.legal':'Informations légales','foot.terms':'Conditions générales','foot.privacy':'Confidentialité et cookies','foot.cookies':'Paramètres des cookies'
 };
 const LANG = new URLSearchParams(location.search).get('lang') === 'fr' ? 'fr' : 'pl';
 if (LANG === 'fr') {

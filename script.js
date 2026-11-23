@@ -55,14 +55,6 @@
     const dur = document.getElementById('cons-time');
     if (dur && tr(c.consultDuration)) { dur.querySelector('dd').textContent = tr(c.consultDuration); dur.hidden = false; }
 
-    // Stopka: autorzy zdjęć (wszystkie użyte) · crédits générés
-    const cr = document.getElementById('credits');
-    if (cr) {
-      const all = [...Object.values(IMAGES), ...GALLERY, ...MOMENTS].filter(i => i.credit);
-      const seen = new Map(); all.forEach(i => seen.set(i.credit.user, i.credit.name));
-      cr.innerHTML = seen.size ? `${T('Zdjęcia poglądowe z Unsplash', 'Photos d’illustration : Unsplash')} (${T('licencja Unsplash', 'licence Unsplash')}): ` +
-        [...seen].map(([u, n]) => `<a href="https://unsplash.com/@${esc(u)}?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">${esc(n)}</a>`).join(', ') + '.' : '';
-    }
     document.querySelectorAll('[data-provisional]').forEach(el => { el.hidden = !SITE.provisionalVisuals; });
   }
 

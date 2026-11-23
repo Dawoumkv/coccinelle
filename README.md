@@ -19,3 +19,10 @@ Strona jest domyślnie po polsku. Dodanie `?lang=fr` na końcu adresu pokazuje t
 ## Porady (blog)
 10 artykułów dla Par Młodych w folderze `porady/` (PL + FR pod `?lang=fr`).
 Treść jest w `tools/articles.py`. Po każdej zmianie uruchom `python3 tools/build_blog.py` – wygeneruje strony i odświeży 3 karty na stronie głównej.
+
+## Stopka, strony prawne i statystyki · Pied de page, pages légales, statistiques
+
+- `SITE.madeBy` w `content.js`: „Strona wykonana przez …” (puste = ukryte).
+- `SITE.owner`: dane właściciela na stronach `informacje/regulamin.html` i `informacje/prywatnosc.html` (treść w `tools/legal.py`, generowanie: `python3 tools/build_blog.py`).
+- `SITE.analytics.ga4`: identyfikator Google Analytics 4. Puste = brak statystyk i brak banera cookies; po wpisaniu ID pojawia się baner zgody, a GA ładuje się dopiero po akceptacji.
+- Autorzy zdjęć z Unsplash są zapisani w `content.js` (pole `credit`), nie są już wyświetlani w stopce.
