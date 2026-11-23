@@ -57,8 +57,8 @@ const FR = {
   'form.demo':'Version de présentation : l’envoi du formulaire sera branché avant la mise en ligne.',
   'form.offT':'Votre message n’a pas été envoyé','form.offP':'Ce site est une version de présentation et le formulaire n’est pas encore branché. Votre message est prêt ci-dessous : copiez-le et envoyez-le-nous sur Instagram.','form.offL':'Texte du message','form.copy':'Copier le message','form.ig':'Ouvrir Instagram',
   'insta.title':'Entrez dans l’atelier','insta.lead':'Nouvelles robes et coulisses de l’atelier : à suivre sur Instagram.',
-  'ct.eyebrow':'Contact','ct.title':'Bienvenue à l’atelier','ct.1t':'L’atelier','ct.visit':'Visites uniquement sur rendez-vous',
-  'ct.2t':'Téléphone','ct.3t':'Nous écrire','ct.form':'ou via le formulaire de cette page',
+  'ct.eyebrow':'Contact','ct.title':'Bienvenue à l’atelier','ct.1t':'L’atelier','ct.visit':'De préférence sur rendez-vous',
+  'ct.2t':'Téléphone','ct.hours':'Horaires','nav.reviews':'Avis','rev.eyebrow':'Avis','rev.title':'Ce que disent <em>nos mariées</em>','rev.all':'Tous les avis sur Google','ct.3t':'Nous écrire','ct.form':'ou via le formulaire de cette page',
   'foot.1':'Atelier de création couture · Hrubieszów, voïvodie de Lublin (Pologne)','foot.2':'Version de présentation : les photos sont des illustrations et ne montrent pas les créations de l’atelier.',
   'foot.legal':'Informations légales','foot.terms':'Conditions générales','foot.privacy':'Confidentialité et cookies','foot.cookies':'Paramètres des cookies'
 };
