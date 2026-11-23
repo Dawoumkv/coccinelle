@@ -375,3 +375,6 @@ section{padding:clamp(4.5rem,10vw,8rem) clamp(1rem,5vw,4rem)}
 }
 @media (max-width:560px){.brand-text small{display:none}.hero-full h1{font-size:2.6rem}}
 @media (prefers-reduced-motion:reduce){.hero-bg img,.hero-full .hero-text{animation:none}}
+.hero-bg img{object-position:12% 40%}
+@media (max-width:1180px) and (min-width:861px){.brand-text{font-size:1.45rem;letter-spacing:.1em}.nav-links{gap:.9rem}}
+@media (max-width:860px){.hero-bg img{object-position:center 30%}}
