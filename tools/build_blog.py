@@ -8,7 +8,8 @@ from articles import ARTICLES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
-V = "9"  # wersja CSS/JS (odświeżenie cache)
+BASE = "https://dawoumkv.github.io/coccinelle/"
+V = "10"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -42,8 +43,13 @@ HEAD = """<!doctype html>
 <meta property="og:description" content="{desc}">
 <meta property="og:type" content="{ogtype}">
 <meta property="og:locale" content="pl_PL">
+<meta property="og:site_name" content="Coccinelle Suknie Ślubne">
+<meta property="og:url" content="{url}">
+<link rel="canonical" href="{url}">
+<meta name="twitter:card" content="summary_large_image">
 {ogimg}<meta name="theme-color" content="#fbf9f6">
 <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -107,7 +113,7 @@ def build_index():
     cards = "\n".join(card(a) for a in ARTICLES)
     page = HEAD.format(title="Porady dla Panny Młodej · Coccinelle Suknie Ślubne",
                        desc="Jak zorganizować ślub, wybrać suknię i niczego nie zapomnieć. Praktyczne porady dla Par Młodych od pracowni Coccinelle.",
-                       ogtype="website", ogimg=f'<meta property="og:image" content="{img(ARTICLES[0]["img"], 1200, 630)}">\n', v=V, ld="")
+                       ogtype="website", url=BASE + "porady/", ogimg=f'<meta property="og:image" content="{img(ARTICLES[0]["img"], 1200, 630)}">\n', v=V, ld="")
     page += f"""<section class="blog-hero">
   <p class="eyebrow" data-i18n="blog.eyebrow">Porady</p>
   <h1 data-i18n="blog.title"><span class="script">Ślubny</span> niezbędnik</h1>
@@ -130,7 +136,7 @@ def build_article(i, a):
     ld = ('<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@type": "Article",
           "headline": p["title"], "image": img(a["img"], 1200), "inLanguage": "pl",
           "publisher": {"@type": "Organization", "name": "Coccinelle Suknie Ślubne"}}, ensure_ascii=False) + '</script>\n')
-    page = HEAD.format(title=f"{p['title']} · Coccinelle", desc=html.escape(p["lead"]), ogtype="article",
+    page = HEAD.format(title=f"{p['title']} · Coccinelle", desc=html.escape(p["lead"]), ogtype="article", url=BASE + "porady/" + a["slug"] + ".html",
                        ogimg=f'<meta property="og:image" content="{img(a["img"], 1200, 630)}">\n', v=V, ld=ld)
     def art(lang, d):
         hid = "" if lang == "pl" else " hidden"

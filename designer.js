@@ -217,7 +217,7 @@
       body = `<div class="k-opts k-${s.type}" role="group" aria-label="${esc(s.q)}">` + s.opts.map(o => {
         const on = s.multi ? (sel || []).includes(o.v) : sel === o.v;
         let vis = '';
-        if (s.type === 'photo') { const g = styleImg(o.v); vis = g ? `<span class="k-photo"><img src="${imgUrl(g, 420, 525)}" srcset="${imgSrcset(g, [280, 420, 640], 1.25)}" sizes="(max-width:560px) 45vw, 220px" alt="" loading="lazy" width="420" height="525"></span>` : ''; }
+        if (s.type === 'photo') { const g = styleImg(o.v); vis = g ? `<span class="k-photo"><img src="${imgUrl(g, 640, 853)}" srcset="${imgSrcset(g, [320, 480, 640, 900], 1.333)}" sizes="(max-width:560px) 46vw, (max-width:1100px) 24vw, 330px" alt="" loading="lazy" width="640" height="853"></span>` : ''; }
         else if (s.type === 'sketch') {
           const over = s.id === 'fason' ? { fason: o.v, sleeve: 'brak' } : s.id === 'dekolt' ? { neck: o.v, sleeve: 'brak' } : { sleeve: o.v };
           vis = `<span class="k-sketch k-sketch-${s.view}">${sketchOf(over, s.view)}</span>`;
@@ -232,10 +232,10 @@
       <h3 tabindex="-1" data-focus>${s.q}</h3>${s.hint ? `<p class="k-hint">${s.hint}</p>` : ''}
       ${body}
       <div class="k-nav">
-        ${step > 0 && !editing ? `<button type="button" class="btn btn-ghost" data-act="back">← ${T('Wstecz', 'Retour')}</button>` : '<span></span>'}
-        <button type="button" class="btn btn-dark" data-act="next" ${ok ? '' : 'disabled aria-disabled="true"'}>${nextLabel}</button>
+        ${step > 0 && !editing ? `<button type="button" class="btn btn-ghost k-back" data-act="back">← <span>${T('Wstecz', 'Retour')}</span></button>` : '<span class="k-back"></span>'}
+        <p class="k-status">${ok ? `<span class="k-count">${step + 1} / ${STEPS.length}</span>` : (s.multi ? T('Wybierz co najmniej jedną tkaninę.', 'Choisissez au moins une matière.') : T('Wybierz jedną odpowiedź, aby przejść dalej.', 'Choisissez une réponse pour continuer.'))}</p>
+        <button type="button" class="btn btn-dark k-next" data-act="next" ${ok ? '' : 'disabled aria-disabled="true"'}>${nextLabel} →</button>
       </div>
-      ${!ok ? `<p class="k-small k-center">${s.multi ? T('Wybierz co najmniej jedną tkaninę.', 'Choisissez au moins une matière.') : T('Wybierz jedną odpowiedź, aby przejść dalej.', 'Choisissez une réponse pour continuer.')}</p>` : ''}
     </div>`;
   }
 
