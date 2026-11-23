@@ -51,9 +51,9 @@ const GALLERY = [
   { id: 'syrenka-rekawy', cat: 'syrenka', tall: true, unsplash: '1585241920473-b472eb9ffbae', credit: { name: 'Jonathan Borba', user: 'jonathanborba' },
     title: { pl: 'Koronkowa syrenka z rękawami', fr: 'Sirène en dentelle à manches longues' },
     desc: { pl: 'Dopasowana koronkowa suknia, która rozszerza się u dołu. Długie koronkowe rękawy i głęboki dekolt na plecach.', fr: 'Une robe ajustée en dentelle qui s’évase vers le bas, des manches longues en dentelle et un dos largement échancré.' } },
-  { id: 'ksiezniczka-welon', cat: 'ksiezniczka', tall: false, unsplash: '1548313093-370cf4ba3892', credit: { name: 'Thomas Christian', user: 'tom_christian' },
-    title: { pl: 'Księżniczka z długim welonem', fr: 'Princesse et long voile' },
-    desc: { pl: 'Szeroka, rozłożysta spódnica i welon sięgający ziemi. Klasyka, która nie wychodzi z mody.', fr: 'Une jupe ample et un voile qui touche le sol : un classique qui traverse les années.' } },
+  { id: 'syrenka-welon', cat: 'syrenka', tall: false, unsplash: '1548313093-370cf4ba3892', credit: { name: 'Thomas Christian', user: 'tom_christian' },
+    title: { pl: 'Koronkowa syrenka z welonem', fr: 'Sirène en dentelle et voile' },
+    desc: { pl: 'Koronkowa suknia bez ramiączek, dopasowana do bioder i rozszerzana ku dołowi. Do tego welon sięgający ziemi.', fr: 'Une robe en dentelle sans bretelles, ajustée sur les hanches puis évasée, avec un voile qui touche le sol.' } },
   { id: 'ksiezniczka-plecy', cat: 'ksiezniczka', tall: false, unsplash: '1622277430358-f4d134452e2e', credit: { name: 'Asdrubal luna', user: 'infectedluna' },
     title: { pl: 'Koronkowe plecy, pełna spódnica', fr: 'Dos en dentelle, jupe ample' },
     desc: { pl: 'Widok od tyłu: koronka na przezroczystym tle i bardzo obszerna, warstwowa spódnica.', fr: 'Vue de dos : de la dentelle sur un fond transparent et une jupe très ample, en plusieurs couches.' } },
@@ -70,18 +70,18 @@ const GALLERY = [
     title: { pl: 'Dekolt V i długie rękawy', fr: 'Décolleté en V et manches longues' },
     desc: { pl: 'Gładka tkanina, dekolt w kształcie litery V i długie rękawy. Prosto i elegancko.', fr: 'Un tissu lisse, un décolleté en V et des manches longues. Simple et élégant.' } },
   { id: 'manekin-tren', cat: 'ksiezniczka', tall: false, unsplash: '1594552072238-b8a33785b261', credit: { name: 'Marina Abrosimova', user: 'abrosimova_marina_foto' },
-    title: { pl: 'Gorset w serce i tren', fr: 'Bustier cœur et traîne' },
-    desc: { pl: 'Suknia na manekinie: dekolt w kształcie serca i zwiewna, przezroczysta warstwa zakończona trenem.', fr: 'Robe sur mannequin : décolleté cœur et une couche transparente et légère qui finit en traîne.' } },
+    title: { pl: 'Suknia z długim trenem', fr: 'Robe à longue traîne' },
+    desc: { pl: 'Suknia na manekinie: dopasowana góra i zwiewna, przezroczysta warstwa spódnicy zakończona długim trenem.', fr: 'Robe sur mannequin : un buste ajusté et une couche de jupe légère et transparente, terminée par une longue traîne.' } },
   { id: 'kombinezon-dekolt', cat: 'kombinezon', tall: true, unsplash: '1724415980026-8f0d565bd4c1', credit: { name: 'Sueda Dilli', user: 'suedadilli' },
     title: { pl: 'Kombinezon z głębokim dekoltem', fr: 'Combinaison au décolleté plongeant' },
-    desc: { pl: 'Kombinezon wiązany na szyi, z głębokim dekoltem i odkrytymi ramionami.', fr: 'Une combinaison nouée à l’encolure, au décolleté plongeant, épaules dégagées.' } },
+    desc: { pl: 'Biały kombinezon z bardzo głębokim dekoltem w kształcie litery V i odkrytymi ramionami.', fr: 'Une combinaison blanche au décolleté en V très plongeant, épaules dégagées.' } },
   { id: 'minimal-ramiona', cat: 'minimal', tall: false, unsplash: '1685531340101-cc469d5224a2', credit: { name: 'aykut bingül', user: 'aykutbingul' },
     title: { pl: 'Odkryte ramiona, prosta linia', fr: 'Épaules dénudées, ligne droite' },
     desc: { pl: 'Gładka suknia z dekoltem odsłaniającym ramiona i prostą, dopasowaną linią.', fr: 'Une robe lisse qui dégage les épaules, avec une ligne droite et près du corps.' } },
   { id: 'minimal-guziki', cat: 'minimal', tall: false, unsplash: '1722805739769-b7201151df95', credit: { name: 'Ben Atkins', user: 'benatkinsphotography' },
     title: { pl: 'Satyna i rząd guziczków', fr: 'Satin et rangée de boutons' },
     desc: { pl: 'Odkryte ramiona, gładka satyna i rząd drobnych guziczków wzdłuż pleców.', fr: 'Épaules dénudées, satin lisse et une rangée de petits boutons tout le long du dos.' } },
-  { id: 'minimal-v', cat: 'minimal', tall: false, unsplash: '1641622327741-bcacada475bd', credit: { name: 'Breanna Miller', user: 'goldenpoppyphoto' },
+  { id: 'minimal-v', cat: 'minimal', tall: true, unsplash: '1641622327741-bcacada475bd', credit: { name: 'Breanna Miller', user: 'goldenpoppyphoto' },
     title: { pl: 'Dopasowana, z dekoltem V', fr: 'Ajustée, décolleté en V' },
     desc: { pl: 'Cienkie ramiączka, dekolt V i gładka tkanina, która lekko rozszerza się u dołu.', fr: 'Fines bretelles, décolleté en V et tissu lisse, légèrement évasé vers le bas.' } }
 ];
@@ -100,7 +100,7 @@ const MOMENTS = [
 const KREATOR_STYLE_IMAGES = {
   romantyczny: 'gorset-tiul',
   minimalistyczny: 'minimal-v',
-  klasyczny: 'ksiezniczka-welon',
+  klasyczny: 'syrenka-welon',
   nowoczesny: 'kombinezon-golf'
 };
 

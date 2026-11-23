@@ -175,7 +175,7 @@
   const save = () => store.set(KEY, state);
   const opt = (sid, v) => { const s = STEPS.find(x => x.id === sid); return s && s.opts ? s.opts.find(o => o.v === v) : null; };
   const label = (sid, v) => (opt(sid, v) || {}).t || '';
-  const fabrics = () => (state.tkaniny || []).map(v => label('tkaniny', v)).join(', ');
+  const fabrics = () => (state.tkaniny || []).map((v, i) => { const t = label('tkaniny', v); return i ? t.charAt(0).toLowerCase() + t.slice(1) : t; }).join(', ');
   const answered = i => { const s = STEPS[i]; return s.type === 'date' ? ('data' in state || state.done) : s.multi ? (state[s.id] || []).length > 0 : !!state[s.id]; };
   const sketchOf = (over, view) => croquis({
     fason: over.fason || state.fason || 'litera-a',
