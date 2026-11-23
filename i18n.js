@@ -1,11 +1,11 @@
 // Wersja francuska (tylko pod adresem ?lang=fr) – strona domyślnie jest po polsku.
 // Version française, visible uniquement avec ?lang=fr à la fin de l'adresse.
 const FR = {
-  'nav.about':'À propos','nav.dresses':'Nos robes','nav.process':'Making of','nav.faq':'Questions','nav.contact':'Contact','nav.quote':'Devis','nav.blog':'Conseils',
+  'nav.about':'À propos','nav.dresses':'Inspirations','nav.creator':'Votre robe','nav.process':'Making of','nav.faq':'Questions','nav.contact':'Contact','nav.quote':'Devis','nav.blog':'Conseils',
   'hero.eyebrow':'Atelier de couture de créatrice · voïvodie de Lublin',
   'hero.title':'<span class="script">Robes de mariée</span> sur mesure',
   'hero.lead':'Montrez-nous ce dont vous rêvez, et nous le coudrons pour vous.',
-  'hero.cta1':'Demander un devis','hero.cta2':'Voir les robes','hero.alt':'Les mariés en promenade dans les collines',
+  'hero.cta1':'Demander un devis','hero.cta2':'Imaginez votre robe','hero.alt':'Les mariés en promenade dans les collines',
   'hero.badge':'Chaque robe<br>est créée de zéro,<br>rien que pour vous',
   'marquee':'<span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i><span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i>',
   'about.eyebrow':'À propos','about.alt':'Robe de mariée en dentelle avec petits boutons dans le dos',
@@ -19,7 +19,7 @@ const FR = {
   'why.1t':'Un ajustement parfait','why.1':'La robe est construite de zéro selon vos mesures. Pas besoin de la « retoucher » : elle est faite dès le départ pour votre silhouette.',
   'why.2t':'Vos idées','why.2':'Vous pouvez associer votre décolleté préféré au bas de vos rêves, choisir la dentelle, les manches et la traîne. Le projet se construit avec vous.',
   'why.3t':'Une pièce unique','why.3':'Personne d\'autre n\'aura la même robe. C\'est une création originale, cousue rien que pour vous, pour ce jour exceptionnel.',
-  'gal.eyebrow':'Nos robes','gal.title':'Les coupes que nous aimons','gal.lead':'Des inspirations et des coupes que nous pouvons coudre spécialement pour vous. Chaque robe est d\'abord le rêve de quelqu\'un.',
+  'gal.eyebrow':'Inspirations','gal.title':'Les coupes que nous aimons','gal.lead':'Des inspirations et des coupes que nous pouvons coudre spécialement pour vous. Chaque robe est d\'abord le rêve de quelqu\'un.',
   'gal.f0':'Toutes','gal.f1':'Classiques','gal.f2':'Sirène','gal.f3':'Minimalistes','gal.f4':'Combinaison',
   'gal.c1':'Dentelle &amp; décolleté cœur','gal.c2':'Sirène, décolleté en V','gal.c3':'Princesse','gal.c4':'Coupe simple, décolleté carré','gal.c5':'Trapèze en dentelle','gal.c6':'Combinaison de mariée','gal.c7':'Sirène en dentelle','gal.c8':'Évasée, décolleté en V','gal.c9':'Ajustée, dentelle délicate',
   'gal.more':'Plus de réalisations sur <a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener">Instagram @coccinellesuknieslubne</a>',
@@ -55,6 +55,10 @@ const FR = {
   'blog.eyebrow':'Conseils','blog.htitle':'Le guide <em>du mariage</em>','blog.hlead':'Comment organiser son mariage, choisir sa robe et ne rien oublier ? Voici les conseils essentiels pour les futurs mariés.','blog.all':'Tous les conseils','blog.more':'Lire la suite','blog.related':'À lire aussi',
   'blog.title':'<span class="script">Le guide</span> du mariage','blog.lead':'Organisation, robe, souvenirs et jour J : tout ce à quoi il faut penser avant de vous dire « oui ».',
   'foot.cr':'Photos : Unsplash','foot.3':'Photos d\'illustration : Unsplash.',
+  'gal.hint':'Cliquez sur ♡ sur une robe qui vous plaît : vous créerez votre sélection et pourrez la joindre à votre demande.',
+  'real.eyebrow':'Nos créations','real.title':'Les histoires de nos mariées','real.lead':'Du premier croquis au jour du mariage, en passant par le choix des tissus et les essayages. Bientôt, nous montrerons ici de vraies robes cousues dans notre atelier.','real.todo':'[Ici : histoires et photos des robes de l\'atelier – à compléter]',
+  'kr.eyebrow':'Imaginez votre robe','kr.title':'Imaginons <em>votre robe</em>','kr.lead':'Six petites questions : style, silhouette, décolleté, manches, matières et date du mariage. À la fin, vous obtenez votre planche d\'inspiration et le calendrier de votre robe, à enregistrer ou à envoyer à l\'atelier.',
+  'cons.title':'Première consultation','cons.where':'Où','cons.wherev':'Dans notre atelier, voïvodie de Lublin','cons.time':'Durée','cons.timev':'[durée – à compléter]','cons.bring':'Quoi apporter','cons.bringv':'Vos inspirations (la planche du créateur ou votre sélection), vos chaussures de mariage si vous les avez déjà.',
   'foot.1':'Coccinelle Suknie Ślubne · Atelier de couture professionnel de créatrice','foot.2':'Les photos du site sont des illustrations provisoires.'
 };
 const PL_MSG = {
