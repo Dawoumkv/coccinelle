@@ -10,7 +10,7 @@ from legal import LEGAL, UPDATED
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
 BASE = "https://pracowniacoccinelle.com/"
-V = "16"  # wersja CSS/JS (odświeżenie cache)
+V = "17"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -80,7 +80,7 @@ HEAD = """<!doctype html>
     <span class="brand-text">Coccinelle<small>Suknie Ślubne</small></span>
   </a>
   <div class="nav-right">
-    <a href="../index.html#wycena" class="nav-cta" data-i18n="nav.quote">Napisz do nas</a>
+    <a href="../index.html#kontakt" class="nav-cta" data-i18n="nav.contact">Kontakt</a>
   </div>
 </header>
 

@@ -21,7 +21,7 @@
   --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:7.5rem;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:5.5rem;-webkit-text-size-adjust:100%}
 body{font-family:var(--sans);font-weight:300;color:var(--text);background:var(--ivory);line-height:1.7;font-size:1rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body.modal-open,body.menu-open{overflow:hidden}
 img{display:block;max-width:100%;height:auto}
@@ -672,16 +672,9 @@ dialog::backdrop{background:rgba(30,28,27,.72)}
 .map-actions{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-top:1.3rem}
 .ct-map.is-off .map-route{position:static;background:none}
 
-/* ---------- Telefon: pasek u góry i przyciski na dole · Téléphone en avant ---------- */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:61;height:2.2rem;background:var(--ink);color:#e9e2da;display:flex;justify-content:center;align-items:center;gap:1.4rem;font-size:.78rem;letter-spacing:.08em;padding:0 1rem;white-space:nowrap;overflow:hidden}
-.topbar a{color:#fff;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;font-weight:400;letter-spacing:.1em}
-.topbar a:hover span{text-decoration:underline;text-underline-offset:3px}
-.topbar svg{width:15px;height:15px}
-.tb-more{opacity:.72;overflow:hidden;text-overflow:ellipsis}
-body.has-topbar .nav{top:2.2rem}
+/* ---------- Telefon: przyciski na dole (mobile) · Barre d'appel ---------- */
 .callbar{display:none}
 @media (max-width:760px){
-  .tb-more{display:none}
   .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:58;box-shadow:0 -10px 24px -14px rgba(0,0,0,.35);padding-bottom:env(safe-area-inset-bottom);background:var(--ivory)}
   .callbar a{display:flex;justify-content:center;align-items:center;gap:.55rem;min-height:3.4rem;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;text-decoration:none}
   .callbar svg{width:17px;height:17px}
@@ -693,4 +686,4 @@ body.has-topbar .nav{top:2.2rem}
   body.has-callbar .cookie-bar{bottom:4.2rem}
   body.menu-open .callbar{display:none}
 }
-@media print{.topbar,.callbar{display:none!important}}
+@media print{.callbar{display:none!important}}
