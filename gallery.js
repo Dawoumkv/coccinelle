@@ -102,7 +102,7 @@
     const d = e.target.closest('[data-discuss]');
     if (d && window.CocciForm) {
       const g = byId(d.dataset.discuss);
-      window.CocciForm.attach('suknia-' + g.id, T('Inspiracja', 'Inspiration') + ': ' + tr(g.title), T('Chciałabym porozmawiać o tej inspiracji z galerii', 'J’aimerais parler de cette inspiration de la galerie') + ': ' + tr(g.title) + ` (${CATS[g.cat]})`);
+      window.CocciForm.attach('suknia-' + g.id, T('Inspiracja', 'Inspiration') + T(': ', ' : ') + tr(g.title), T('Chciałabym porozmawiać o tej inspiracji z galerii', 'J’aimerais parler de cette inspiration de la galerie') + T(': ', ' : ') + tr(g.title) + ` (${CATS[g.cat]})`);
       lastFocus = null; closeSheet();
       window.CocciForm.reveal(T('Inspiracja jest dołączona do wiadomości. Dopisz kilka słów od siebie.', 'L’inspiration est jointe à votre message. Ajoutez quelques mots si vous le souhaitez.'));
     }
@@ -139,7 +139,7 @@
       it.classList.toggle('is-fav', on);
       const b = it.querySelector('.fav-btn');
       b.setAttribute('aria-pressed', on);
-      b.setAttribute('aria-label', (on ? T('Usuń z moich inspiracji', 'Retirer de mes inspirations') : T('Dodaj do moich inspiracji', 'Ajouter à mes inspirations')) + ': ' + tr(byId(it.dataset.id).title));
+      b.setAttribute('aria-label', (on ? T('Usuń z moich inspiracji', 'Retirer de mes inspirations') : T('Dodaj do moich inspiracji', 'Ajouter à mes inspirations')) + T(': ', ' : ') + tr(byId(it.dataset.id).title));
     });
     pill.innerHTML = `${heart}<span>${T('Moje inspiracje', 'Mes inspirations')}</span><b>${favs.length}</b>`;
     pill.setAttribute('aria-label', `${T('Moje inspiracje', 'Mes inspirations')} (${favs.length})`);

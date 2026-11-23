@@ -8,7 +8,7 @@ from articles import ARTICLES
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
-V = "8"  # wersja CSS/JS (odświeżenie cache)
+V = "9"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"

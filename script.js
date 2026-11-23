@@ -161,13 +161,13 @@
     }));
 
     const compose = () => {
-      const f = form;
+      const f = form, C = T(':', ' :');
       const lines = [
-        `${T('Imię', 'Prénom')}: ${f.imie.value.trim()}`,
-        `E-mail: ${f.email.value.trim()}`,
-        f.telefon.value.trim() ? `${T('Telefon', 'Téléphone')}: ${f.telefon.value.trim()}` : '',
-        f.data.value ? `${T('Data ślubu', 'Date du mariage')}: ${f.data.value}` : '',
-        f.fason.value ? `${T('Wymarzony fason', 'Coupe souhaitée')}: ${f.fason.options[f.fason.selectedIndex].text}` : '',
+        `${T('Imię', 'Prénom')}${C} ${f.imie.value.trim()}`,
+        `E-mail${C} ${f.email.value.trim()}`,
+        f.telefon.value.trim() ? `${T('Telefon', 'Téléphone')}${C} ${f.telefon.value.trim()}` : '',
+        f.data.value ? `${T('Data ślubu', 'Date du mariage')}${C} ${f.data.value}` : '',
+        f.fason.value ? `${T('Wymarzony fason', 'Coupe souhaitée')}${C} ${f.fason.options[f.fason.selectedIndex].text}` : '',
         '', f.wiadomosc.value.trim(),
         ...Object.values(att).map(a => '\n' + a.text)
       ];
