@@ -5,7 +5,7 @@ const FR = {
   'hero.eyebrow':'Atelier de couture de créatrice · voïvodie de Lublin',
   'hero.title':'<span class="script">Robes de mariée</span> sur mesure',
   'hero.lead':'Montrez-nous ce dont vous rêvez, et nous le coudrons pour vous.',
-  'hero.cta1':'Demander un devis','hero.cta2':'Voir les robes','hero.alt':'Les mariés au coucher du soleil',
+  'hero.cta1':'Demander un devis','hero.cta2':'Voir les robes','hero.alt':'Les mariés en promenade dans les collines',
   'hero.badge':'Chaque robe<br>est créée de zéro,<br>rien que pour vous',
   'marquee':'<span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i><span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i>',
   'about.eyebrow':'À propos','about.alt':'Robe de mariée en dentelle avec petits boutons dans le dos',

@@ -378,3 +378,4 @@ section{padding:clamp(4.5rem,10vw,8rem) clamp(1rem,5vw,4rem)}
 .hero-bg img{object-position:12% 40%}
 @media (max-width:1180px) and (min-width:861px){.brand-text{font-size:1.45rem;letter-spacing:.1em}.nav-links{gap:.9rem}}
 @media (max-width:860px){.hero-bg img{object-position:center 30%}}
+.hero-bg img{object-position:center 60%}
