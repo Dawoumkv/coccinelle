@@ -50,6 +50,13 @@
       if (c.email) lines.push(`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`);
       if (lines.length) { reach.querySelector('p').innerHTML = lines.join('<br>'); reach.hidden = false; }
     }
+    const map = document.getElementById('ct-map');
+    if (map && c.map) {
+      const q = encodeURIComponent(c.map);
+      map.innerHTML = `<iframe src="https://www.google.com/maps?q=${q}&amp;z=16&amp;hl=${L}&amp;output=embed" title="${esc(T('Mapa dojazdu do pracowni', 'Plan d’accès à l’atelier'))}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="btn btn-ghost map-route" href="https://www.google.com/maps/dir/?api=1&amp;destination=${q}" target="_blank" rel="noopener">${T('Wyznacz trasę', 'Itinéraire')}</a>`;
+      map.hidden = false;
+    }
     const fb = document.getElementById('ct-fb');
     if (fb && c.facebook) { fb.href = c.facebook; fb.parentElement.hidden = false; }
     const dur = document.getElementById('cons-time');
