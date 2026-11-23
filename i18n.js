@@ -1,14 +1,14 @@
 // Wersja francuska (tylko pod adresem ?lang=fr) – strona domyślnie jest po polsku.
 // Version française, visible uniquement avec ?lang=fr à la fin de l'adresse.
 const FR = {
-  'nav.about':'À propos','nav.dresses':'Nos robes','nav.process':'Making of','nav.faq':'Questions','nav.contact':'Contact','nav.quote':'Devis',
+  'nav.about':'À propos','nav.dresses':'Nos robes','nav.process':'Making of','nav.faq':'Questions','nav.contact':'Contact','nav.quote':'Devis','nav.blog':'Conseils',
   'hero.eyebrow':'Atelier de couture de créatrice · voïvodie de Lublin',
   'hero.title':'<span class="script">Robes de mariée</span> sur mesure',
   'hero.lead':'Montrez-nous ce dont vous rêvez, et nous le coudrons pour vous.',
-  'hero.cta1':'Demander un devis','hero.cta2':'Voir les robes','hero.alt':'Robe de mariée sur un mannequin',
+  'hero.cta1':'Demander un devis','hero.cta2':'Voir les robes','hero.alt':'Les mariés le jour du mariage',
   'hero.badge':'Chaque robe<br>est créée de zéro,<br>rien que pour vous',
   'marquee':'<span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i><span>Sur mesure</span><i>✦</i><span>Créations originales</span><i>✦</i><span>Dentelles &amp; tulles</span><i>✦</i><span>Finitions à la main</span><i>✦</i><span>Essayages jusqu\'à la perfection</span><i>✦</i>',
-  'about.eyebrow':'À propos','about.alt':'Robe de mariée en dentelle',
+  'about.eyebrow':'À propos','about.alt':'Robe de mariée en dentelle avec petits boutons dans le dos',
   'about.title':'L\'atelier où <em>votre vision</em> prend forme',
   'about.p1':'Coccinelle est un atelier de couture professionnel et indépendant. Nous ne vendons pas de robes toutes faites : chacune est dessinée et cousue de A à Z, aux mesures d\'une mariée précise.',
   'about.p2':'Nous écoutons, nous conseillons sur le choix des tissus et de la coupe, puis, étape par étape et essayage après essayage, nous peaufinons chaque détail : la dentelle, le décolleté, la longueur de la traîne. Pour que le jour du mariage, la robe tombe parfaitement et soit exactement celle de vos rêves.',
@@ -19,7 +19,7 @@ const FR = {
   'why.1t':'Un ajustement parfait','why.1':'La robe est construite de zéro selon vos mesures. Pas besoin de la « retoucher » : elle est faite dès le départ pour votre silhouette.',
   'why.2t':'Vos idées','why.2':'Vous pouvez associer votre décolleté préféré au bas de vos rêves, choisir la dentelle, les manches et la traîne. Le projet se construit avec vous.',
   'why.3t':'Une pièce unique','why.3':'Personne d\'autre n\'aura la même robe. C\'est une création originale, cousue rien que pour vous, pour ce jour exceptionnel.',
-  'gal.eyebrow':'Nos robes','gal.title':'Cousues avec amour','gal.lead':'Quelques robes nées dans notre atelier. Chacune a d\'abord été le rêve de quelqu\'un.',
+  'gal.eyebrow':'Nos robes','gal.title':'Les coupes que nous aimons','gal.lead':'Des inspirations et des coupes que nous pouvons coudre spécialement pour vous. Chaque robe est d\'abord le rêve de quelqu\'un.',
   'gal.f0':'Toutes','gal.f1':'Classiques','gal.f2':'Sirène','gal.f3':'Minimalistes','gal.f4':'Combinaison',
   'gal.c1':'Dentelle &amp; décolleté cœur','gal.c2':'Sirène, décolleté en V','gal.c3':'Princesse','gal.c4':'Coupe simple, décolleté carré','gal.c5':'Trapèze en dentelle','gal.c6':'Combinaison de mariée','gal.c7':'Sirène en dentelle','gal.c8':'Évasée, décolleté en V','gal.c9':'Ajustée, dentelle délicate',
   'gal.more':'Plus de réalisations sur <a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener">Instagram @coccinellesuknieslubne</a>',
@@ -51,6 +51,10 @@ const FR = {
   'insta.title':'Entrez dans notre atelier','insta.lead':'Nouvelles robes, coulisses de la couture et stories « making of » : à suivre sur Instagram.',
   'ct.eyebrow':'Contact','ct.title':'Bienvenue à l\'atelier','ct.1t':'Atelier','ct.addr':'[Adresse de l\'atelier – à compléter]','ct.region':'voïvodie de Lublin','ct.visit':'Visites sur rendez-vous uniquement',
   'ct.2t':'Téléphone &amp; e-mail','ct.phone':'[Téléphone +48 – à compléter]','ct.mail':'[E-mail – à compléter]',
+  'mom.eyebrow':'Votre journée','mom.title':'Des moments qui <em>restent pour toujours</em>','mom.lead':'Le premier regard, les vœux, la danse jusqu\'au petit matin. Une robe dans laquelle vous vous sentez vous-même rend ces moments encore plus beaux.',
+  'blog.eyebrow':'Conseils','blog.htitle':'Le guide <em>du mariage</em>','blog.hlead':'Comment organiser son mariage, choisir sa robe et ne rien oublier ? Voici les conseils essentiels pour les futurs mariés.','blog.all':'Tous les conseils','blog.more':'Lire la suite','blog.related':'À lire aussi',
+  'blog.title':'<span class="script">Le guide</span> du mariage','blog.lead':'Organisation, robe, souvenirs et jour J : tout ce à quoi il faut penser avant de vous dire « oui ».',
+  'foot.cr':'Photos : Unsplash','foot.3':'Photos d\'illustration : Unsplash.',
   'foot.1':'Coccinelle Suknie Ślubne · Atelier de couture professionnel de créatrice','foot.2':'Les photos du site sont des illustrations provisoires.'
 };
 const PL_MSG = {
@@ -64,5 +68,14 @@ if (LANG === 'fr') {
   document.querySelectorAll('[data-i18n]').forEach(el => { const v = FR[el.dataset.i18n]; if (v) el.innerHTML = v; });
   document.querySelectorAll('[data-i18n-alt]').forEach(el => { const v = FR[el.dataset.i18nAlt]; if (v) el.alt = v; });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => { const v = FR[el.dataset.i18nPh]; if (v) el.placeholder = v; });
-  document.title = 'Coccinelle Suknie Ślubne · Robes de mariée sur mesure (FR)';
+  document.querySelectorAll('[data-lang]').forEach(el => { el.hidden = el.dataset.lang !== 'fr'; });
+  // garder ?lang=fr en naviguant entre les pages
+  document.querySelectorAll('a[href]').forEach(a => {
+    const h = a.getAttribute('href');
+    if (/^(https?:|mailto:|tel:|#)/.test(h)) return;
+    const [path, hash] = h.split('#');
+    a.setAttribute('href', path + (path.includes('?') ? '&' : '?') + 'lang=fr' + (hash ? '#' + hash : ''));
+  });
+  if (!document.body.classList.contains('blog-page')) document.title = 'Coccinelle Suknie Ślubne · Robes de mariée sur mesure (FR)';
+  else { const h1 = document.querySelector('[data-lang="fr"] h1, .blog-hero h1'); if (h1) document.title = h1.textContent + ' · Coccinelle (FR)'; }
 }

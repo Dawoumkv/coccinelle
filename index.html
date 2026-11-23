@@ -14,7 +14,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="style.css?v=4">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ClothingStore","name":"Coccinelle Suknie Ślubne","description":"Suknie ślubne szyte na miarę. Profesjonalna Autorska Pracownia Krawiecka.","areaServed":"województwo lubelskie","sameAs":["https://www.instagram.com/coccinellesuknieslubne/"]}
 </script>
@@ -28,6 +29,7 @@
       <a href="#o-nas" data-i18n="nav.about">O nas</a>
       <a href="#suknie" data-i18n="nav.dresses">Nasze suknie</a>
       <a href="#jak-szyjemy" data-i18n="nav.process">Making of</a>
+      <a href="porady/index.html" data-i18n="nav.blog">Porady</a>
       <a href="#pytania" data-i18n="nav.faq">Pytania</a>
       <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
       <a href="#wycena" class="nav-mobile-only" data-i18n="nav.quote">Wycena</a>
@@ -57,7 +59,7 @@
   </div>
   <div class="hero-visual">
     <div class="arch">
-      <img src="images/suknia-3.svg" alt="Suknia ślubna na manekinie" data-i18n-alt="hero.alt">
+      <img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=900&q=80&h=1230" alt="Para Młoda w dniu ślubu" data-i18n-alt="hero.alt">
     </div>
     <div class="hero-badge">
       <span class="script">C</span>
@@ -78,7 +80,7 @@
 <!-- O NAS -->
 <section class="about" id="o-nas">
   <div class="about-img reveal">
-    <img src="images/suknia-5.svg" alt="Suknia ślubna z koronką" data-i18n-alt="about.alt">
+    <img src="https://images.unsplash.com/photo-1524563970700-a302b6888e17?auto=format&fit=crop&w=900&q=80&h=1125" alt="Koronkowa suknia ślubna z guziczkami na plecach" data-i18n-alt="about.alt" loading="lazy">
   </div>
   <div class="about-text reveal">
     <p class="eyebrow" data-i18n="about.eyebrow">O nas</p>
@@ -122,8 +124,8 @@
 <section class="gallery-section" id="suknie">
   <div class="section-head reveal">
     <p class="eyebrow" data-i18n="gal.eyebrow">Nasze suknie</p>
-    <h2 data-i18n="gal.title">Uszyte z miłością</h2>
-    <p data-i18n="gal.lead">Kilka sukni, które powstały w naszej pracowni. Każda z nich była najpierw czyimś marzeniem.</p>
+    <h2 data-i18n="gal.title">Fasony, które kochamy</h2>
+    <p data-i18n="gal.lead">Inspiracje i fasony, które możemy uszyć specjalnie dla Ciebie. Każda suknia jest najpierw czyimś marzeniem.</p>
   </div>
   <div class="filters reveal">
     <button class="active" data-filter="all" data-i18n="gal.f0">Wszystkie</button>
@@ -133,16 +135,16 @@
     <button data-filter="kombinezon" data-i18n="gal.f4">Kombinezon</button>
   </div>
   <div class="gallery">
-    <!-- Zdjęcia poglądowe: podmień pliki w folderze images/ na prawdziwe zdjęcia (np. suknia-1.jpg) -->
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="images/suknia-1.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c1">Koronka &amp; dekolt w serduszko</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="syrenka"><img src="images/suknia-2.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c2">Syrenka z dekoltem V</figcaption></figure>
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="images/suknia-3.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c3">Księżniczka</figcaption></figure>
-    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="images/suknia-4.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c4">Prosty krój, kwadratowy dekolt</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="klasyczne"><img src="images/suknia-5.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c5">Litera A z koronką</figcaption></figure>
-    <figure class="g-item reveal" data-cat="kombinezon"><img src="images/suknia-6.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c6">Kombinezon ślubny</figcaption></figure>
-    <figure class="g-item tall reveal" data-cat="syrenka"><img src="images/suknia-7.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c7">Koronkowa syrenka</figcaption></figure>
-    <figure class="g-item reveal" data-cat="klasyczne"><img src="images/suknia-8.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c8">Rozkloszowana, dekolt V</figcaption></figure>
-    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="images/suknia-9.svg" alt="" loading="lazy"><figcaption data-i18n="gal.c9">Dopasowana, delikatna koronka</figcaption></figure>
+    <!-- Zdjęcia poglądowe z Unsplash: podmień na prawdziwe zdjęcia sukni z pracowni (np. images/suknia-1.jpg) -->
+    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1549488497-94b52bddac5d?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c1">Koronka &amp; dekolt w serduszko</figcaption></figure>
+    <figure class="g-item tall reveal" data-cat="syrenka"><img src="https://images.unsplash.com/photo-1585241920473-b472eb9ffbae?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c2">Syrenka z dekoltem V</figcaption></figure>
+    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1548313093-370cf4ba3892?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c3">Księżniczka</figcaption></figure>
+    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="https://images.unsplash.com/photo-1622277430358-f4d134452e2e?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c4">Prosty krój, kwadratowy dekolt</figcaption></figure>
+    <figure class="g-item tall reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1549417229-7686ac5595fd?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c5">Litera A z koronką</figcaption></figure>
+    <figure class="g-item reveal" data-cat="kombinezon"><img src="https://images.unsplash.com/photo-1769230385611-7d1d1c6b3684?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c6">Kombinezon ślubny</figcaption></figure>
+    <figure class="g-item tall reveal" data-cat="syrenka"><img src="https://images.unsplash.com/photo-1529636273736-fc88b31ea9d9?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c7">Koronkowa syrenka</figcaption></figure>
+    <figure class="g-item reveal" data-cat="klasyczne"><img src="https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c8">Rozkloszowana, dekolt V</figcaption></figure>
+    <figure class="g-item reveal" data-cat="minimalistyczne"><img src="https://images.unsplash.com/photo-1492175742197-ed20dc5a6bed?auto=format&fit=crop&w=800&q=80&h=1000" alt="" loading="lazy"><figcaption data-i18n="gal.c9">Dopasowana, delikatna koronka</figcaption></figure>
   </div>
   <p class="gallery-more reveal" data-i18n="gal.more">Więcej realizacji na <a href="https://www.instagram.com/coccinellesuknieslubne/" target="_blank" rel="noopener">Instagramie @coccinellesuknieslubne</a></p>
 </section>
@@ -183,6 +185,58 @@
 <section class="quote reveal">
   <span class="script big">C</span>
   <blockquote data-i18n="quote">„Pokaż nam, o czym marzysz,<br>a my to dla Ciebie uszyjemy.”</blockquote>
+</section>
+
+<!-- CHWILE -->
+<section class="moments">
+  <div class="section-head reveal">
+    <p class="eyebrow" data-i18n="mom.eyebrow">Wasz dzień</p>
+    <h2 data-i18n="mom.title">Chwile, które <em>zostają na zawsze</em></h2>
+    <p data-i18n="mom.lead">Pierwsze spojrzenie, przysięga, taniec do białego rana. Suknia, w której czujesz się sobą, sprawia, że te chwile są jeszcze piękniejsze.</p>
+  </div>
+  <div class="moments-grid">
+    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+    <figure class="m-item tall reveal"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1606490194859-07c18c9f0968?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1606216794079-73f85bbd57d5?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+    <figure class="m-item tall reveal"><img src="https://images.unsplash.com/photo-1546032996-6dfacbacbf3f?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+    <figure class="m-item reveal"><img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?auto=format&fit=crop&w=700&q=80&h=900" alt="" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- PORADY -->
+<section class="blog-teaser" id="porady">
+  <div class="section-head reveal">
+    <p class="eyebrow" data-i18n="blog.eyebrow">Porady</p>
+    <h2 data-i18n="blog.htitle">Ślubny <em>niezbędnik</em></h2>
+    <p data-i18n="blog.hlead">Jak zorganizować ślub, wybrać suknię i niczego nie zapomnieć? Oto najważniejsze wskazówki dla Par Młodych.</p>
+  </div>
+  <div class="post-grid three">
+    <!-- BLOG-CARDS:START -->
+    <a class="post-card reveal" href="porady/od-czego-zaczac-organizacje-slubu.html">
+      <div class="post-card-img"><img src="https://images.unsplash.com/photo-1513128034602-7814ccaddd4e?auto=format&fit=crop&w=700&q=80&h=520" alt="" loading="lazy"></div>
+      <p class="post-meta"><span data-lang="pl">Organizacja · 5 min</span><span data-lang="fr" hidden>Organisation · 5 min</span></p>
+      <h3><span data-lang="pl">Od czego zacząć organizację ślubu? 7 pierwszych kroków</span><span data-lang="fr" hidden>Par où commencer l&#x27;organisation du mariage ? 7 premières étapes</span></h3>
+      <p class="post-excerpt"><span data-lang="pl">Zaręczyny za Wami, emocje opadają i pojawia się pytanie: od czego właściwie zacząć? Oto spokojny plan na pierwsze tygodnie przygotowań.</span><span data-lang="fr" hidden>Les fiançailles sont passées, l&#x27;émotion retombe et une question arrive : par où commencer ? Voici un plan serein pour les premières semaines.</span></p>
+      <span class="post-more" data-i18n="blog.more">Czytaj dalej</span>
+    </a>
+    <a class="post-card reveal" href="porady/kalendarz-przygotowan-do-slubu.html">
+      <div class="post-card-img"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=700&q=80&h=520" alt="" loading="lazy"></div>
+      <p class="post-meta"><span data-lang="pl">Organizacja · 6 min</span><span data-lang="fr" hidden>Organisation · 6 min</span></p>
+      <h3><span data-lang="pl">Kalendarz przygotowań do ślubu: co i kiedy załatwić</span><span data-lang="fr" hidden>Rétroplanning du mariage : quoi faire et quand</span></h3>
+      <p class="post-excerpt"><span data-lang="pl">Rok, pół roku, miesiąc, tydzień… Rozpisaliśmy przygotowania krok po kroku, żeby nic nie umknęło i żeby ostatnie dni były czasem radości, a nie biegania.</span><span data-lang="fr" hidden>Un an, six mois, un mois, une semaine… Nous avons détaillé les préparatifs étape par étape, pour que rien ne vous échappe et que les derniers jours soient joyeux, pas une course.</span></p>
+      <span class="post-more" data-i18n="blog.more">Czytaj dalej</span>
+    </a>
+    <a class="post-card reveal" href="porady/jak-wybrac-suknie-slubna.html">
+      <div class="post-card-img"><img src="https://images.unsplash.com/photo-1591221662157-6f62de5508eb?auto=format&fit=crop&w=700&q=80&h=520" alt="" loading="lazy"></div>
+      <p class="post-meta"><span data-lang="pl">Suknia · 6 min</span><span data-lang="fr" hidden>Robe · 6 min</span></p>
+      <h3><span data-lang="pl">Jak wybrać suknię ślubną idealną dla siebie</span><span data-lang="fr" hidden>Comment choisir la robe de mariée idéale pour vous</span></h3>
+      <p class="post-excerpt"><span data-lang="pl">Księżniczka, syrenka, litera A, a może kombinezon? Podpowiadamy, jak znaleźć fason, w którym poczujesz się sobą – i pięknie.</span><span data-lang="fr" hidden>Princesse, sirène, trapèze ou combinaison ? Nos conseils pour trouver la coupe dans laquelle vous vous sentirez vous-même, et magnifique.</span></p>
+      <span class="post-more" data-i18n="blog.more">Czytaj dalej</span>
+    </a>
+    <!-- BLOG-CARDS:END -->
+  </div>
+  <p class="blog-all reveal"><a href="porady/index.html" class="btn btn-ghost" data-i18n="blog.all">Wszystkie porady</a></p>
 </section>
 
 <!-- FAQ -->
@@ -279,6 +333,7 @@
   <span class="brand-mark sm">C</span>
   <p data-i18n="foot.1">Coccinelle Suknie Ślubne · Profesjonalna Autorska Pracownia Krawiecka</p>
   <p class="muted">© <span id="year"></span> Coccinelle. <span data-i18n="foot.2">Zdjęcia na stronie mają charakter poglądowy.</span></p>
+  <p class="muted credits"><span data-i18n="foot.cr">Zdjęcia: Unsplash</span> – <a href="https://unsplash.com/@eugenivy_now?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Eugenia Pan'kiv</a>, <a href="https://unsplash.com/@wedding_photography?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Wedding Photography</a>, <a href="https://unsplash.com/@orlovamaria?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Maria Orlova</a>, <a href="https://unsplash.com/@jonathanborba?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Jonathan Borba</a>, <a href="https://unsplash.com/@tom_christian?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Thomas Christian</a>, <a href="https://unsplash.com/@infectedluna?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Asdrubal luna</a>, <a href="https://unsplash.com/@fotografosamuelcruz?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Fotógrafo Samuel Cruz</a>, <a href="https://unsplash.com/@srosinger3997?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Samantha Gades</a>, <a href="https://unsplash.com/@abrosimova_marina_foto?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Marina Abrosimova</a>, <a href="https://unsplash.com/@petrov?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Petr Ovralov</a>, <a href="https://unsplash.com/@jakobowens1?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Jakob Owens</a>, <a href="https://unsplash.com/@nate_dumlao?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Nathan Dumlao</a>, <a href="https://unsplash.com/@bekmanis?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Elvis Bekmanis</a>, <a href="https://unsplash.com/@victoriapriessnitz?utm_source=coccinelle&amp;utm_medium=referral" target="_blank" rel="noopener">Victoria Priessnitz</a>.</p>
 </footer>
 
 <div class="lightbox" id="lightbox" aria-hidden="true">
@@ -287,7 +342,7 @@
   <p class="lb-cap"></p>
 </div>
 
-<script src="i18n.js?v=3"></script>
-<script src="script.js?v=3"></script>
+<script src="i18n.js?v=4"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
