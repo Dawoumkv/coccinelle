@@ -33,7 +33,7 @@ const SITE = {
 
   // Stopka: „Strona wykonana przez …” – puste = ukryte
   // Pied de page : « Site réalisé par … » – vide = masqué
-  madeBy: { name: '', url: '' },
+  madeBy: { name: 'DHOWLY', url: '' },
 
   // Dane właściciela do stron prawnych (regulamin, polityka prywatności).
   // Puste pola są pomijane. · Identité du propriétaire pour les pages légales.
