@@ -249,7 +249,7 @@
       [T('Data ślubu', 'Date du mariage'), state.data ? fmtDay(new Date(state.data + 'T12:00:00')) : T('jeszcze nieznana', 'pas encore fixée')],
       [T('Uwagi', 'Remarques'), state.note || '']
     ].filter(r => r[1]);
-    return T('Moja inspiracja z kreatora na stronie:', 'Mon inspiration (créateur du site) :') + '\n' + rows.map(r => `• ${r[0]}: ${r[1]}`).join('\n');
+    return T('Moja inspiracja z kreatora na stronie:', 'Mon inspiration (créateur du site) :') + '\n' + rows.map(r => `• ${r[0]}${T(':', ' :')} ${r[1]}`).join('\n');
   }
 
   function renderBoard() {
@@ -271,7 +271,7 @@
       </div>
       <div class="board-grid">
         <figure class="b-sketch">${sketchOf({}, 'full')}<figcaption>${T('Szkic poglądowy', 'Esquisse indicative')}</figcaption></figure>
-        ${g ? `<figure class="b-photo"><img src="${imgUrl(g, 560, 760)}" alt="" width="560" height="760"><figcaption>${T('Nastrój', 'Ambiance')}: ${esc(label('styl', state.styl))}</figcaption></figure>` : ''}
+        ${g ? `<figure class="b-photo"><img src="${imgUrl(g, 560, 760)}" alt="" width="560" height="760"><figcaption>${T('Nastrój: ', 'Ambiance : ')}${esc(label('styl', state.styl))}</figcaption></figure>` : ''}
         <div class="b-details">
           <dl>${rows.map(r => `<div><dt>${r[1]}</dt><dd>${esc(r[2] || '—')}</dd><button type="button" class="b-edit" data-edit="${r[0]}" aria-label="${T('Zmień', 'Modifier')}: ${r[1]}">${T('Zmień', 'Modifier')}</button></div>`).join('')}</dl>
           ${sw ? `<div class="b-swatches" aria-hidden="true">${sw}</div>` : ''}
