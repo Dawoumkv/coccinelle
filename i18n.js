@@ -50,7 +50,7 @@ const FR = {
   'faq.4q':'Puis-je associer des éléments de plusieurs robes ?','faq.4a':'Oui, c’est tout l’intérêt du sur-mesure. Le décolleté d’une robe, les manches d’une autre, la jupe d’une troisième : nous dessinons une robe qui réunit le tout avec harmonie.',
   'faq.5q':'Combien d’essayages faut-il prévoir ?','faq.5a':'Cela dépend du projet. Nous nous voyons autant de fois qu’il le faut pour que la robe tombe parfaitement.',
   'form.eyebrow':'Écrire à l’atelier','form.title':'Parlez-nous de votre robe','form.lead':'Chaque robe est différente, alors tout se décide avec vous. Dites-nous quelques mots de votre projet : nous vous répondrons en vous proposant une date de consultation.',
-  'cons.title':'La première consultation','cons.where':'Où','cons.wherev':'À l’atelier, dans la région de Lublin (Pologne)','cons.time':'Durée','cons.bring':'À apporter','cons.bringv':'Vos inspirations (la planche du créateur ou votre liste de robes préférées) et vos chaussures de mariage, si vous les avez déjà.',
+  'cons.title':'La première consultation','cons.where':'Où','cons.wherev':'À l’atelier, à Hrubieszów, 3 rue du 3-Mai (ul. 3 Maja 2)','cons.time':'Durée','cons.bring':'À apporter','cons.bringv':'Vos inspirations (la planche du créateur ou votre liste de robes préférées) et vos chaussures de mariage, si vous les avez déjà.',
   'form.name':'Prénom','form.phone':'Téléphone','form.opt':'(facultatif)','form.date':'Date du mariage','form.style':'Coupe souhaitée',
   'form.o0':'Je ne sais pas encore','form.o1':'Princesse','form.o2':'Trapèze','form.o3':'Sirène','form.o4':'Droite, épurée','form.o5':'Combinaison','form.o6':'Autre chose',
   'form.msg':'Votre message','form.ph':'Coupe, tissus, inspirations, lien vers des photos…','form.att':'Joint à votre message','form.send':'Envoyer le message',
@@ -58,8 +58,8 @@ const FR = {
   'form.offT':'Votre message n’a pas été envoyé','form.offP':'Ce site est une version de présentation et le formulaire n’est pas encore branché. Votre message est prêt ci-dessous : copiez-le et envoyez-le-nous sur Instagram.','form.offL':'Texte du message','form.copy':'Copier le message','form.ig':'Ouvrir Instagram',
   'insta.title':'Entrez dans l’atelier','insta.lead':'Nouvelles robes et coulisses de l’atelier : à suivre sur Instagram.',
   'ct.eyebrow':'Contact','ct.title':'Bienvenue à l’atelier','ct.1t':'L’atelier','ct.visit':'Visites uniquement sur rendez-vous',
-  'ct.2t':'Téléphone et e-mail','ct.3t':'Nous écrire','ct.form':'ou via le formulaire de cette page',
-  'foot.1':'Atelier de création couture · région de Lublin, Pologne','foot.2':'Version de présentation : les photos sont des illustrations et ne montrent pas les créations de l’atelier.',
+  'ct.2t':'Téléphone','ct.3t':'Nous écrire','ct.form':'ou via le formulaire de cette page',
+  'foot.1':'Atelier de création couture · Hrubieszów, voïvodie de Lublin (Pologne)','foot.2':'Version de présentation : les photos sont des illustrations et ne montrent pas les créations de l’atelier.',
   'foot.legal':'Informations légales','foot.terms':'Conditions générales','foot.privacy':'Confidentialité et cookies','foot.cookies':'Paramètres des cookies'
 };
 const LANG = new URLSearchParams(location.search).get('lang') === 'fr' ? 'fr' : 'pl';

@@ -17,12 +17,14 @@ const SITE = {
 
   // Dane kontaktowe: puste pola są automatycznie ukrywane · Les champs vides sont masqués.
   contact: {
-    address: '',            // np. 'ul. Kwiatowa 1, 20-000 Lublin'
-    region: { pl: 'województwo lubelskie', fr: 'région de Lublin, Pologne' },
-    phone: '',              // np. '+48 600 000 000'
+    address: 'ul. 3 Maja 2, 22-500 Hrubieszów',
+    region: { pl: 'województwo lubelskie', fr: 'voïvodie de Lublin, Pologne' },
+    // Mapa Google (bez klucza API) – puste = brak mapy · Carte Google, vide = pas de carte
+    map: 'Coccinelle, 3 Maja 2, 22-500 Hrubieszów',
+    phone: '+48 500 122 789',
     email: '',              // np. 'kontakt@coccinelle.pl'
     instagram: 'coccinellesuknieslubne',
-    facebook: '',           // pełny adres strony na Facebooku · adresse complète de la page Facebook
+    facebook: 'https://www.facebook.com/pracowniacoccinelle/',
     consultDuration: { pl: '', fr: '' } // np. { pl: 'ok. 1,5 godziny', fr: 'environ 1 h 30' }
   },
 
@@ -37,7 +39,7 @@ const SITE = {
 
   // Dane właściciela do stron prawnych (regulamin, polityka prywatności).
   // Puste pola są pomijane. · Identité du propriétaire pour les pages légales.
-  owner: { name: 'Coccinelle Suknie Ślubne', company: '', address: '', nip: '', email: '' },
+  owner: { name: 'Coccinelle Suknie Ślubne', company: '', address: 'ul. 3 Maja 2, 22-500 Hrubieszów', nip: '', email: '' },
 
   // Statystyki: identyfikator Google Analytics 4 (np. 'G-XXXXXXX').
   // Puste = brak statystyk i brak banera cookies. Statystyki ładują się dopiero po zgodzie.

@@ -10,7 +10,7 @@ from legal import LEGAL, UPDATED
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
 BASE = "https://pracowniacoccinelle.com/"
-V = "13"  # wersja CSS/JS (odświeżenie cache)
+V = "14"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
     u = f"https://images.unsplash.com/photo-{pid}?auto=format&fit=crop&w={w}&q=80"
@@ -92,7 +92,7 @@ FOOT = """
 
 <footer class="footer">
   <p class="footer-brand">Coccinelle<small>Suknie Ślubne</small></p>
-  <p data-i18n="foot.1">Autorska pracownia krawiecka · województwo lubelskie</p>
+  <p data-i18n="foot.1">Autorska pracownia krawiecka · Hrubieszów, województwo lubelskie</p>
   <nav class="footer-links" aria-label="Informacje prawne" data-i18n-aria="foot.legal">
     <a href="../informacje/regulamin.html" data-i18n="foot.terms">Regulamin</a>
     <a href="../informacje/prywatnosc.html" data-i18n="foot.privacy">Polityka prywatności i cookies</a>
