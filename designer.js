@@ -101,6 +101,7 @@
     let state = store.get('coccinelle-kreator') || {};
     let step = 0;
     try { const h = new URLSearchParams(location.search).get('suknia'); if (h) { state = JSON.parse(decodeURIComponent(escape(atob(h)))); step = STEPS.length; } } catch (e) {}
+    if (step === 0 && state.styl && 'data' in state) step = STEPS.length; // wróć do gotowej tablicy
     const save = () => store.set('coccinelle-kreator', state);
     const label = (sid, v) => { const s = STEPS.find(x => x.id === sid); const o = s && s.opts && s.opts.find(x => x.v === v); return o ? o.t : ''; };
 
