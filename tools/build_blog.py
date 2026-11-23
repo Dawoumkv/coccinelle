@@ -9,7 +9,7 @@ from legal import LEGAL, UPDATED
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "porady")
-BASE = "https://dawoumkv.github.io/coccinelle/"
+BASE = "https://pracowniacoccinelle.com/"
 V = "13"  # wersja CSS/JS (odświeżenie cache)
 
 def img(pid, w, h=None):
